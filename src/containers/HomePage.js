@@ -10,8 +10,8 @@ const Home = () => {
         <p>Sign in or sign up to start the experience</p>
       </div>
       <div className="buttons line-center">
-        <div>Sign In</div>
-        <div>Sign Up</div>
+        <div>Sign in</div>
+        <div>Sign up</div>
       </div>
     </main>
   );

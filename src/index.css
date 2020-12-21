@@ -5,13 +5,14 @@
 /* COMMON RULES */
 /* ---------------------- */
 :root {
-  --bg-black: #0f1218;
-  --rich-black: #041018;
+  --rich-black: #020916;
+  --rich-blue-black: #041018;
   --prussian-blue: #003554;
   --sapphire-blue: #006494;
   --capri: #47c2ff;
   --alice-blue: #ebf7fe;
   --white: #fff;
+  --grey: rgb(155, 155, 155);
 }
 
 html {
@@ -26,7 +27,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-black);
+  background-color: var(--rich-blue-black);
   color: var(--alice-blue);
   cursor: default;
 }
@@ -34,6 +35,11 @@ body {
 h1 {
   font-size: 1.4rem;
   font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
@@ -85,7 +91,21 @@ main {
 /* ---------------------- */
 /* FOOTER */
 /* ---------------------- */
-.footer {
+footer {
   height: 5rem;
   background-color: var(--rich-black);
+}
+footer > div:first-child > p {
+  color: var(--capri);
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+}
+footer > div:last-child {
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
+  color: var(--grey);
+  font-style: italic;
+}
+footer > div:last-child a:hover {
+  color: var(--sapphire-blue);
 }

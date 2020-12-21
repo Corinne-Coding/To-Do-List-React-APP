@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Containers
@@ -6,14 +6,18 @@ import SignInPage from "./containers/SignInPage";
 import SignUpPage from "./containers/SignUpPage";
 import BoardsPage from "./containers/BoardsPage";
 import BoardPage from "./containers/BoardPage";
+import HomePage from "./containers/HomePage";
 
 // Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
+  const [displayHeader, setDisplayHeader] = useState(false);
   return (
     <Router>
-      <Header />
+      {displayHeader && <Header />}
+
       <Switch>
         <Route path="/signin">
           <SignInPage />
@@ -30,7 +34,13 @@ const App = () => {
         <Route path="/board">
           <BoardPage />
         </Route>
+
+        <Route path="/">
+          <HomePage />
+        </Route>
       </Switch>
+
+      <Footer />
     </Router>
   );
 };

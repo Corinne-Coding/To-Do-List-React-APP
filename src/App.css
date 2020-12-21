@@ -1,17 +1,45 @@
 /* ---------------------- */
-/* HEADER */
+/* HomePage */
 /* ---------------------- */
-.header {
-  height: 5rem;
-  background-color: var(--rich-black-med);
+.home-page {
+  height: 100%;
+}
+.home-page .titles {
+  font-size: 4rem;
+}
+.home-page .titles > p {
+  margin-bottom: 4rem;
+  text-shadow: 0.6rem 0.6rem 0.6rem var(--prussian-blue),
+    0 0 1em var(--sapphire-blue), 0 0 0.2em var(--sapphire-blue);
+}
+.home-page .titles > p:first-child {
+  transition: font-size 1s;
+  padding: 2rem;
+}
+.home-page .titles > p:first-child:hover {
+  font-size: 4.4rem;
+}
+.home-page .titles > p:last-child {
+  font-size: 2.6rem;
+  font-style: italic;
+}
+.home-page .buttons {
+  font-size: 2rem;
+  margin-top: 4rem;
+  width: 40%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-.header .container {
-  display: flex;
-  justify-content: space-between;
+.home-page .buttons > div {
+  background-color: var(--prussian-blue);
+  border: white 0.2rem solid;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
+    -0.2em 0 0.5em var(--sapphire-blue);
 }
-.header .icon {
-  height: 4rem;
+.home-page .buttons > div:hover {
+  background-color: var(--sapphire-blue);
+  transform: scale(1.1, 1.1);
 }

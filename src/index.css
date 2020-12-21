@@ -1,11 +1,12 @@
 /* Reset CSS */
 @import url("./assets/reset.css");
 
-/* ---------------------- */ /* COMMON RULES */
+/* ---------------------- */
+/* COMMON RULES */
 /* ---------------------- */
 :root {
-  --rich-black: #051923;
-  --rich-black-med: #061e2b;
+  --bg-black: #0f1218;
+  --rich-black: #041018;
   --prussian-blue: #003554;
   --sapphire-blue: #006494;
   --capri: #47c2ff;
@@ -25,8 +26,14 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--rich-black);
-  color: var(--white);
+  background-color: var(--bg-black);
+  color: var(--alice-blue);
+  cursor: default;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .container {
@@ -40,8 +47,45 @@ body {
   align-items: center;
 }
 
-/* Titles */
-h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
+.column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------------------- */
+/* HEADER */
+/* ---------------------- */
+.header {
+  height: 5rem;
+  background-color: var(--rich-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+.header .icon {
+  height: 4rem;
+}
+
+/* ---------------------- */
+/* MAIN */
+/* ---------------------- */
+main {
+  min-height: calc(100vh - 10rem);
+}
+.main-home {
+  min-height: calc(100vh - 5rem);
+}
+
+/* ---------------------- */
+/* FOOTER */
+/* ---------------------- */
+.footer {
+  height: 5rem;
+  background-color: var(--rich-black);
 }

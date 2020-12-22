@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Components
 
@@ -10,8 +11,17 @@ const Home = () => {
         <p>Sign in or sign up to start the experience</p>
       </div>
       <div className="buttons line-center">
-        <div>Sign in</div>
-        <div>Sign up</div>
+        <div>
+          <Link to="/signin">
+            <p>Sign in</p>
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/signup">
+            <p>Sign up</p>
+          </Link>
+        </div>
       </div>
     </main>
   );

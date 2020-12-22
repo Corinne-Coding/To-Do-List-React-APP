@@ -13,6 +13,7 @@
   --alice-blue: #ebf7fe;
   --white: #fff;
   --grey: rgb(155, 155, 155);
+  --imperial-red: #f71834;
 }
 
 html {
@@ -35,6 +36,12 @@ body {
 h1 {
   font-size: 1.4rem;
   font-weight: 600;
+  color: var(--capri);
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
 }
 
 a {
@@ -75,7 +82,8 @@ a {
   justify-content: space-between;
 }
 .header .icon {
-  height: 4rem;
+  height: 3.5rem;
+  margin-right: 1rem;
 }
 
 /* ---------------------- */
@@ -86,6 +94,41 @@ main {
 }
 .main-home {
   min-height: calc(100vh - 5rem);
+}
+
+/* SignInPage - SignUpPage */
+.form-input,
+input[type="submit"] {
+  height: 2rem;
+  width: 20rem;
+  padding: 0.4rem;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  margin-bottom: 2rem;
+  border-radius: 0.2rem;
+}
+input[type="submit"] {
+  width: 10rem;
+  height: 2.6rem;
+  background-color: var(--capri);
+  cursor: pointer;
+  color: var(--prussian-blue);
+  font-size: 1.1rem;
+}
+input[type="submit"]:hover {
+  background-color: var(--sapphire-blue);
+  color: var(--capri);
+}
+
+/* ---------------------- */
+/* ErrorMessage - COMPONENT */
+/* ---------------------- */
+.error-message {
+  height: 3rem;
+  width: 20rem;
+  color: var(--imperial-red);
+  font-size: 0.8rem;
 }
 
 /* ---------------------- */

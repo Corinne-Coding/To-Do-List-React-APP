@@ -1,14 +1,14 @@
 import React from "react";
 
 // Icons
-import checklist from "../assets/icons/checklists.svg";
+import list from "../assets/icons/list.svg";
 
 const Header = () => {
   return (
-    <div className="header ">
+    <div className="header">
       <div className="container">
         <div className="line-center">
-          <img src={checklist} className="icon" />
+          <img src={list} className="icon" alt="icon" />
           <h1>To-do List</h1>
         </div>
 

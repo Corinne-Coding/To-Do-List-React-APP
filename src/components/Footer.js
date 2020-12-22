@@ -17,10 +17,16 @@ const Footer = () => {
       <div>
         <p>
           <span>Icons made by&nbsp;</span>
-          <a href="https://www.flaticon.com/fr/auteurs/becris">Becris&nbsp;</a>
+          <a
+            href="https://www.flaticon.com/fr/auteurs/darius-dan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Darius Dan&nbsp;
+          </a>
           <span>from&nbsp;</span>
-          <a href="https://www.flaticon.com/" target="_blank">
-            flaticon&nbsp;
+          <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer">
+            Flaticon&nbsp;
           </a>
         </p>
       </div>

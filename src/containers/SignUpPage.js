@@ -1,78 +1,86 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 // Components
 import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
+import FormInput from "../components/FormInput";
 
-const SignUpPage = () => {
+const SignUpPage = ({ handleToken }) => {
+  let history = useHistory();
+
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
 
-  const handleInputChange = (info, value) => {
-    if (info === "email") {
-      setEmail(value);
-    } else if (info === "username") {
-      setUsername(value);
-    } else if (info === "password") {
-      setPassword(value);
-    } else if (info === "confirm") {
-      setConfirmPassword(value);
-    }
-  };
-
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && username && password && confirmPassword) {
       if (password === confirmPassword) {
-        console.log("requete");
+        try {
+          setError(null);
+          const response = await axios.post("http://localhost:3000/signup", {
+            email,
+            username,
+            password,
+          });
+
+          if (response.data.token) {
+            handleToken(response.data.token);
+            history.push("/");
+          } else {
+            setError("randomError");
+          }
+        } catch (e) {
+          if (e.response.data.error === "This email already has an account.") {
+            setError("takenEmail");
+          } else {
+            setError("randomError");
+          }
+        }
       } else {
         setError("passwordsError");
       }
     } else {
-      setError("emptyFields");
+      setError("emptyField");
     }
   };
 
   return (
     <>
-      <Header />
+      <Header displayDisconnectButton={false} />
       <main className="column-center">
-        <h2>Sign in</h2>
+        <h2>Sign up</h2>
         <form className="column-center" onSubmit={handleFormSubmit}>
-          <input
+          <FormInput
             placeholder="email"
             type="email"
-            className="form-input"
-            onChange={(event) => {
-              handleInputChange("email", event.target.value);
-            }}
+            value={email}
+            setFunction={setEmail}
           />
-          <input
+
+          <FormInput
             placeholder="username"
-            type="text"
-            className="form-input"
-            onChange={(event) => {
-              handleInputChange("username", event.target.value);
-            }}
+            type="type"
+            value={username}
+            setFunction={setUsername}
           />
-          <input
+
+          <FormInput
             placeholder="password"
             type="password"
-            className="form-input"
-            onChange={(event) => {
-              handleInputChange("password", event.target.value);
-            }}
+            value={password}
+            setFunction={setPassword}
           />
-          <input
+
+          <FormInput
             placeholder="confirm password"
             type="password"
-            className="form-input"
-            onChange={(event) => {
-              handleInputChange("confirm", event.target.value);
-            }}
+            value={confirmPassword}
+            setFunction={setConfirmPassword}
           />
 
           <ErrorMessage name={error} />

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cookies from "js-cookie";
 
 // Containers
 import SignInPage from "./containers/SignInPage";
@@ -12,19 +13,43 @@ import HomePage from "./containers/HomePage";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const [userToken, setUserToken] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetchToken();
+  }, []);
+
+  // get token from cookies
+  const fetchToken = async () => {
+    const token = await Cookies.get("token");
+    if (token) {
+      setUserToken(token);
+    } else {
+      setUserToken(null);
+    }
+    setIsLoading(false);
+  };
+
+  // save / remove token from cookies
+  const handleToken = async (token) => {
+    if (token) {
+      await Cookies.set("token", token);
+      setUserToken(token);
+    } else {
+      await Cookies.remove("token");
+      setUserToken(null);
+    }
+  };
+
   return (
     <Router>
       <Switch>
         <Route path="/signin">
-          <SignInPage />
+          <SignInPage handleToken={handleToken} />
         </Route>
-
         <Route path="/signup">
-          <SignUpPage />
-        </Route>
-
-        <Route path="/boards">
-          <BoardsPage />
+          <SignUpPage handleToken={handleToken} />
         </Route>
 
         <Route path="/board">
@@ -32,7 +57,11 @@ const App = () => {
         </Route>
 
         <Route path="/">
-          <HomePage />
+          {isLoading ? null : !userToken ? (
+            <HomePage />
+          ) : (
+            <BoardsPage handleToken={handleToken} />
+          )}
         </Route>
       </Switch>
 

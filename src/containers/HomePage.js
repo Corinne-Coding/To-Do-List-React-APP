@@ -11,17 +11,17 @@ const Home = () => {
         <p>Sign in or sign up to start the experience</p>
       </div>
       <div className="buttons line-center">
-        <div>
-          <Link to="/signin">
+        <Link to="/signin">
+          <div>
             <p>Sign in</p>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
-        <div>
-          <Link to="/signup">
+        <Link to="/signup">
+          <div>
             <p>Sign up</p>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </main>
   );

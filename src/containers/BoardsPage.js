@@ -1,9 +1,13 @@
 import React from "react";
 
-const BoardsPage = () => {
+// Components
+import Header from "../components/Header";
+
+const BoardsPage = ({ handleToken }) => {
   return (
     <>
-      <div>SignUPPage</div>
+      <Header handleToken={handleToken} />
+      <div>BOARDS Page</div>
     </>
   );
 };

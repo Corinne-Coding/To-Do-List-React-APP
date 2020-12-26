@@ -1,11 +1,13 @@
 import React from "react";
 
-const passwordsError = "Your passwords must be the same.";
-const emptyField = "Please fill all the fields.";
-const takenEmail = "This email already exists.";
-const randomError = "Sorry, an error occurred.";
+const passwordsError = "Your passwords must be the same";
+const emptyField = "Please fill all the fields";
+const takenEmail = "This email already exists";
+const incorrectCredentials = "Incorrect credentials";
+const randomError = "Sorry, an error occurred";
 
 const ErrorMessage = ({ name }) => {
+  //   console.log(name);
   return (
     <div className="error-message line-center">
       {name === "passwordsError"
@@ -16,6 +18,8 @@ const ErrorMessage = ({ name }) => {
         ? takenEmail
         : name === "randomError"
         ? randomError
+        : name === "incorrectCredentials"
+        ? incorrectCredentials
         : null}
     </div>
   );

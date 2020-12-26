@@ -30,16 +30,3 @@
   display: flex;
   justify-content: space-between;
 }
-.home-page .buttons div {
-  background-color: var(--prussian-blue);
-  border: white 0.2rem solid;
-  padding: 1.2rem 1.4rem;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
-    -0.2em 0 0.5em var(--sapphire-blue);
-}
-.home-page .buttons div:hover {
-  background-color: var(--sapphire-blue);
-  transform: scale(1.1, 1.1);
-}

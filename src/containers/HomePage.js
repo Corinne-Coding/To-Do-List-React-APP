@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Components
+import RedirectButton from "../components/RedirectButton";
 
 const Home = () => {
   return (
@@ -11,17 +12,8 @@ const Home = () => {
         <p>Sign in or sign up to start the experience</p>
       </div>
       <div className="buttons line-center">
-        <Link to="/signin">
-          <div>
-            <p>Sign in</p>
-          </div>
-        </Link>
-
-        <Link to="/signup">
-          <div>
-            <p>Sign up</p>
-          </div>
-        </Link>
+        <RedirectButton page="/signin" text="Sign in" connection />
+        <RedirectButton page="/signup" text="Sign up" connection />
       </div>
     </main>
   );

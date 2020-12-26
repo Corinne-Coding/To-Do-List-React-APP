@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
+import RedirectButton from "../components/RedirectButton";
 
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
@@ -23,19 +24,15 @@ const SignInPage = ({ handleToken }) => {
           email,
           password,
         });
-        console.log(response.data);
+
         if (response.data.token) {
-          console.log("04");
           handleToken(response.data.token);
           history.push("/");
         } else {
           setError("randomError");
         }
       } catch (e) {
-        console.log(e.response.data.error);
-        console.log("01");
         if (e.response.data.error === "Unauthorized") {
-          console.log("02");
           setError("incorrectCredentials");
         } else {
           setError("randomError");
@@ -68,6 +65,12 @@ const SignInPage = ({ handleToken }) => {
 
           <ErrorMessage name={error} />
           <input type="submit" value="Submit" />
+
+          <RedirectButton
+            text="Create an account ? Sign up"
+            page="/signup"
+            connection={false}
+          />
         </form>
       </main>
     </>

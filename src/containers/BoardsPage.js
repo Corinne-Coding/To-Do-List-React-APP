@@ -6,7 +6,7 @@ import Header from "../components/Header";
 const BoardsPage = ({ handleToken }) => {
   return (
     <>
-      <Header handleToken={handleToken} />
+      <Header handleToken={handleToken} displayDisconnectButton />
       <div>BOARDS Page</div>
     </>
   );

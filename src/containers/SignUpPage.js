@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
+import RedirectButton from "../components/RedirectButton";
 
 const SignUpPage = ({ handleToken }) => {
   let history = useHistory();
@@ -85,6 +86,12 @@ const SignUpPage = ({ handleToken }) => {
 
           <ErrorMessage name={error} />
           <input type="submit" value="Submit" />
+
+          <RedirectButton
+            text="Already have an account ? Sign in"
+            page="/signin"
+            connection={false}
+          />
         </form>
       </main>
     </>

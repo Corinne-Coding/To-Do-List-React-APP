@@ -6,13 +6,14 @@ import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
+import FormInputButton from "../components/FormInputButton";
 import RedirectButton from "../components/RedirectButton";
 
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("a@a");
+  const [password, setPassword] = useState("a");
   const [error, setError] = useState(null);
 
   const handleFormSubmit = async (event) => {
@@ -24,7 +25,7 @@ const SignInPage = ({ handleToken }) => {
           email,
           password,
         });
-        console.log(response.data);
+        // console.log(response.data);
         if (response.data.token) {
           handleToken(response.data.token);
           history.push("/");
@@ -64,7 +65,8 @@ const SignInPage = ({ handleToken }) => {
           />
 
           <ErrorMessage name={error} />
-          <input type="submit" value="Submit" />
+
+          <FormInputButton />
 
           <RedirectButton
             text="Create an account ? Sign up"

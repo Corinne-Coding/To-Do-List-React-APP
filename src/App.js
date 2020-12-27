@@ -60,7 +60,7 @@ const App = () => {
           {isLoading ? null : !userToken ? (
             <HomePage />
           ) : (
-            <BoardsPage handleToken={handleToken} />
+            <BoardsPage handleToken={handleToken} userToken={userToken} />
           )}
         </Route>
       </Switch>

@@ -11,7 +11,7 @@ const Home = () => {
         <p>Welcome on the To-do List Project</p>
         <p>Sign in or sign up to start the experience</p>
       </div>
-      <div className="buttons line-center">
+      <div className="buttons-line line-center">
         <RedirectButton page="/signin" text="Sign in" connection />
         <RedirectButton page="/signup" text="Sign up" connection />
       </div>

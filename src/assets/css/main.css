@@ -69,6 +69,11 @@ a {
   align-items: center;
 }
 
+.btn {
+  cursor: pointer;
+  outline: none;
+}
+
 /* ---------------------- */
 /* HEADER */
 /* ---------------------- */
@@ -92,7 +97,6 @@ a {
   border: var(--white) 0.2rem solid;
   padding: 0.4rem 0.4rem;
   border-radius: 0.6rem;
-  cursor: pointer;
   box-shadow: 0.2rem 0.2rem 1rem var(--imperial-red),
     -0.2em 0 0.5em var(--imperial-dark-red);
   height: 1rem;
@@ -103,7 +107,6 @@ a {
   margin-right: 2rem;
   font-size: 0.9rem;
 }
-
 .disconnect-btn:hover {
   background-color: var(--imperial-red);
   box-shadow: 0.1rem 0.1rem 1rem var(--imperial-light-red),

@@ -7,7 +7,8 @@ import list from "../assets/icons/list.svg";
 import displayDate from "../assets/functions/displayDate";
 
 const Header = ({ handleToken, displayDisconnectButton }) => {
-  const [date, setDate] = useState(displayDate());
+  const [date] = useState(displayDate());
+
   return (
     <div className="header">
       <div className="container">
@@ -26,7 +27,7 @@ const Header = ({ handleToken, displayDisconnectButton }) => {
               onClick={() => {
                 handleToken();
               }}
-              className="disconnect-btn"
+              className="btn disconnect-btn"
             >
               Déconnexion
             </div>

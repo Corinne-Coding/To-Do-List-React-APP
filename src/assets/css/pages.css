@@ -23,10 +23,8 @@
   font-size: 2.6rem;
   font-style: italic;
 }
-.home-page .buttons {
-  font-size: 1.6rem;
+.home-page .buttons-line {
   margin-top: 4rem;
   width: 40%;
-  display: flex;
   justify-content: space-between;
 }

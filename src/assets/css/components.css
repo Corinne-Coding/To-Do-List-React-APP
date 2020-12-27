@@ -1,0 +1,62 @@
+/* ---------------------- */
+/* RedirectButton - COMPONENT */
+/* ---------------------- */
+.connection-button {
+  background-color: var(--prussian-blue);
+  border: var(--white) 0.2rem solid;
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
+    -0.2em 0 0.5em var(--sapphire-blue);
+}
+.connection-button:hover {
+  background-color: var(--sapphire-blue);
+  transform: scale(1.1, 1.1);
+}
+.redirect-button {
+  cursor: pointer;
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+.redirect-button:hover {
+  color: var(--sapphire-blue);
+}
+
+/* ---------------------- */
+/* ErrorMessage - COMPONENT */
+/* ---------------------- */
+.error-message {
+  height: 2rem;
+  width: 20rem;
+  color: var(--imperial-red);
+  font-size: 0.8rem;
+}
+
+/* ---------------------- */
+/* FormInput - COMPONENT */
+/* ---------------------- */
+.form-input,
+input[type="submit"] {
+  height: 2rem;
+  width: 20rem;
+  padding: 0.4rem;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  margin-bottom: 2rem;
+  border-radius: 0.2rem;
+}
+input[type="submit"] {
+  width: 10rem;
+  height: 2.6rem;
+  background-color: var(--capri);
+  cursor: pointer;
+  color: var(--prussian-blue);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+input[type="submit"]:hover {
+  background-color: var(--sapphire-blue);
+  color: var(--capri);
+}

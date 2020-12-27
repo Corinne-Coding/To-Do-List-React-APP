@@ -24,7 +24,7 @@ const SignInPage = ({ handleToken }) => {
           email,
           password,
         });
-
+        console.log(response.data);
         if (response.data.token) {
           handleToken(response.data.token);
           history.push("/");

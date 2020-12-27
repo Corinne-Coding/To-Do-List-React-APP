@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Components
+import DisconnectionButton from "../components/DisconnectionButton";
+
 // Icons
 import list from "../assets/icons/list.svg";
 
@@ -23,14 +26,7 @@ const Header = ({ handleToken, displayDisconnectButton }) => {
           </div>
 
           {displayDisconnectButton && (
-            <div
-              onClick={() => {
-                handleToken();
-              }}
-              className="btn disconnect-btn"
-            >
-              Déconnexion
-            </div>
+            <DisconnectionButton handleToken={handleToken} />
           )}
         </div>
       </div>

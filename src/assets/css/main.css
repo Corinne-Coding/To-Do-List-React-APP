@@ -72,6 +72,7 @@ a {
 .btn {
   cursor: pointer;
   outline: none;
+  border-radius: 0.6rem;
 }
 
 /* ---------------------- */
@@ -92,25 +93,9 @@ a {
   height: 3.5rem;
   margin-right: 1rem;
 }
-.disconnect-btn {
-  background-color: var(--imperial-dark-red);
-  border: var(--white) 0.2rem solid;
-  padding: 0.4rem 0.4rem;
-  border-radius: 0.6rem;
-  box-shadow: 0.2rem 0.2rem 1rem var(--imperial-red),
-    -0.2em 0 0.5em var(--imperial-dark-red);
-  height: 1rem;
-  color: var(--white);
-  font-weight: bold;
-}
 .date {
   margin-right: 2rem;
   font-size: 0.9rem;
-}
-.disconnect-btn:hover {
-  background-color: var(--imperial-red);
-  box-shadow: 0.1rem 0.1rem 1rem var(--imperial-light-red),
-    -0.2em 0 0.5em var(--imperial-red);
 }
 
 /* ---------------------- */
@@ -121,6 +106,11 @@ main {
 }
 .main-home {
   min-height: calc(100vh - 5rem);
+}
+.main-boards-page {
+  min-height: calc(100vh - 11rem);
+  justify-content: flex-start;
+  padding-top: 1rem;
 }
 
 /* ---------------------- */

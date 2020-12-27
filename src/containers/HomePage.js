@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components
 import RedirectButton from "../components/RedirectButton";
+import ConnectionButton from "../components/ConnectionButton";
 
 const Home = () => {
   return (
@@ -12,8 +13,8 @@ const Home = () => {
         <p>Sign in or sign up to start the experience</p>
       </div>
       <div className="buttons-line line-center">
-        <RedirectButton page="/signin" text="Sign in" connection />
-        <RedirectButton page="/signup" text="Sign up" connection />
+        <ConnectionButton page="/signin" text="Sign in" />
+        <ConnectionButton page="/signup" text="Sign up" />
       </div>
     </main>
   );

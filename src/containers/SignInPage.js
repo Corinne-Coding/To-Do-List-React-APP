@@ -12,8 +12,8 @@ import RedirectButton from "../components/RedirectButton";
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
 
-  const [email, setEmail] = useState("a@a");
-  const [password, setPassword] = useState("a");
+  const [email, setEmail] = useState("coco@coco");
+  const [password, setPassword] = useState("pass");
   const [error, setError] = useState(null);
 
   const handleFormSubmit = async (event) => {
@@ -68,11 +68,7 @@ const SignInPage = ({ handleToken }) => {
 
           <FormInputButton />
 
-          <RedirectButton
-            text="Create an account ? Sign up"
-            page="/signup"
-            connection={false}
-          />
+          <RedirectButton text="Create an account ? Sign up" page="/signup" />
         </form>
       </main>
     </>

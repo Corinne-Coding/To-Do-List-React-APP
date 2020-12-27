@@ -41,14 +41,12 @@ const BoardsPage = ({ handleToken, userToken }) => {
           <LoaderAnimation />
         </main>
       ) : (
-        <main>
-          {boards.length === 0 ? (
-            <AddBoardButton />
-          ) : (
-            boards.map(() => {
-              return <div>un board</div>;
-            })
-          )}
+        <main className="column-center main-boards-page">
+          <AddBoardButton />
+
+          {boards.map(() => {
+            return <div>un board</div>;
+          })}
         </main>
       )}
     </>

@@ -1,7 +1,74 @@
+:root {
+  --rich-black: #020916;
+  --rich-blue-black: #041018;
+  --prussian-blue: #003554;
+  --sapphire-blue: #006494;
+  --capri: #47c2ff;
+  --alice-blue: #ebf7fe;
+  --white: #fff;
+  --grey: #9b9b9b;
+  --imperial-light-red: #ec818f;
+  --imperial-red: #f71834;
+  --imperial-dark-red: #a50f23;
+}
+
+/* ---------------------- */
+/* ALL BUTTONS */
+/* ---------------------- */
+.styled-btn {
+  border: var(--white) 0.2rem solid;
+  padding: 1.2rem 1.4rem;
+  font-weight: bold;
+}
+
+.blue-btn {
+  background-color: var(--prussian-blue);
+  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
+    -0.2em 0 0.5em var(--sapphire-blue);
+}
+.blue-btn:hover {
+  background-color: var(--sapphire-blue);
+}
+
+.red-btn {
+  background-color: var(--imperial-dark-red);
+  box-shadow: 0.2rem 0.2rem 1rem var(--imperial-red),
+    -0.2em 0 0.5em var(--imperial-dark-red);
+}
+.red-btn:hover {
+  background-color: var(--imperial-red);
+  box-shadow: 0.1rem 0.1rem 1rem var(--imperial-light-red),
+    -0.2em 0 0.5em var(--imperial-red);
+}
+
 /* ---------------------- */
 /* AddBoardButton - COMPONENT */
 /* ---------------------- */
 .add-board-btn {
+  width: 10rem;
+  padding: 0.8rem 0.4rem;
+  height: 1rem;
+}
+
+/* ---------------------- */
+/* ConnectionButton - COMPONENT */
+/* ---------------------- */
+.connection-button {
+  font-size: 1.6rem;
+}
+.connection-button:hover {
+  background-color: var(--sapphire-blue);
+  transform: scale(1.1, 1.1);
+}
+
+/* ---------------------- */
+/* DisconnectionButton - COMPONENT */
+/* ---------------------- */
+.disconnect-btn {
+  padding: 0.4rem 0.4rem;
+  height: 1rem;
+  color: var(--white);
+  font-size: inherit;
 }
 
 /* ---------------------- */
@@ -15,7 +82,7 @@
 }
 
 /* ---------------------- */
-/* FormInput - COMPONENT */
+/* FormInput & FormInputButton - COMPONENT */
 /* ---------------------- */
 .form-input,
 .form-input-button {
@@ -43,19 +110,6 @@
 /* ---------------------- */
 /* RedirectButton - COMPONENT */
 /* ---------------------- */
-.connection-button {
-  background-color: var(--prussian-blue);
-  border: var(--white) 0.2rem solid;
-  padding: 1.2rem 1.4rem;
-  border-radius: 0.6rem;
-  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
-    -0.2em 0 0.5em var(--sapphire-blue);
-  font-size: 1.6rem;
-}
-.connection-button:hover {
-  background-color: var(--sapphire-blue);
-  transform: scale(1.1, 1.1);
-}
 .redirect-button {
   color: var(--grey);
   font-size: 0.8rem;

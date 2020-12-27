@@ -6,7 +6,7 @@ const AddBoardButton = () => {
       onClick={() => {
         console.log("add a board");
       }}
-      className="add-board-btn"
+      className="btn styled-btn blue-btn add-board-btn line-center"
     >
       Add a board
     </div>

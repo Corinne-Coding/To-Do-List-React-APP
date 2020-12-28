@@ -1,8 +1,13 @@
 import React from "react";
 
-const FormInputButton = () => {
+const FormInputButton = ({ value, disabled }) => {
   return (
-    <input type="submit" value="Submit" className="btn form-input-button" />
+    <input
+      type="submit"
+      value={value}
+      className="btn form-input-button"
+      disabled={disabled}
+    />
   );
 };
 

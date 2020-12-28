@@ -1,10 +1,10 @@
 import React from "react";
 
-const AddBoardButton = () => {
+const AddBoardButton = ({ setDisplayModal }) => {
   return (
     <div
       onClick={() => {
-        console.log("add a board");
+        setDisplayModal(true);
       }}
       className="btn styled-btn blue-btn add-board-btn line-center"
     >

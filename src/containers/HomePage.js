@@ -7,7 +7,7 @@ import ConnectionButton from "../components/ConnectionButton";
 
 const Home = () => {
   return (
-    <main className="main-home home-page column-center">
+    <main className="main-home home-page column-center container">
       <div className="titles column-center">
         <p>Welcome on the To-do List Project</p>
         <p>Sign in or sign up to start the experience</p>

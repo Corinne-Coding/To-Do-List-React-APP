@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 const App = () => {
   const [userToken, setUserToken] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [displayModal, setDisplayModal] = useState(false);
 
   useEffect(() => {
     fetchToken();
@@ -60,7 +61,12 @@ const App = () => {
           {isLoading ? null : !userToken ? (
             <HomePage />
           ) : (
-            <BoardsPage handleToken={handleToken} userToken={userToken} />
+            <BoardsPage
+              handleToken={handleToken}
+              userToken={userToken}
+              displayModal={displayModal}
+              setDisplayModal={setDisplayModal}
+            />
           )}
         </Route>
       </Switch>

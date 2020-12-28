@@ -47,7 +47,7 @@ const SignInPage = ({ handleToken }) => {
   return (
     <>
       <Header displayDisconnectButton={false} />
-      <main className="column-center">
+      <main className="column-center container">
         <h2>Sign in</h2>
         <form className="column-center" onSubmit={handleFormSubmit}>
           <FormInput
@@ -66,7 +66,7 @@ const SignInPage = ({ handleToken }) => {
 
           <ErrorMessage name={error} />
 
-          <FormInputButton />
+          <FormInputButton value="Submit" disabled={false} />
 
           <RedirectButton text="Create an account ? Sign up" page="/signup" />
         </form>

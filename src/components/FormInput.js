@@ -9,7 +9,7 @@ const FormInput = ({ placeholder, type, value, setFunction }) => {
     <input
       placeholder={placeholder}
       type={type}
-      className="form-input"
+      className="btn form-input"
       value={value}
       onChange={(event) => {
         handleInputChange(event.target.value);

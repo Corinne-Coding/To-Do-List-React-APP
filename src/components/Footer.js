@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div>
         <p>
-          <span>Icons made by&nbsp;</span>
+          <span>To-do list icon made by&nbsp;</span>
           <a
             href="https://www.flaticon.com/fr/auteurs/darius-dan"
             target="_blank"

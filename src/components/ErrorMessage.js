@@ -1,10 +1,11 @@
 import React from "react";
 
 const passwordsError = "Your passwords must be the same";
-const emptyField = "Please fill all the fields";
+const emptyField = "Please, fill all the fields";
 const takenEmail = "This email already exists";
 const incorrectCredentials = "Incorrect credentials";
 const randomError = "Sorry, an error occurred";
+const missingTitle = "Please, add a title";
 
 const ErrorMessage = ({ name }) => {
   //   console.log(name);
@@ -20,6 +21,8 @@ const ErrorMessage = ({ name }) => {
         ? randomError
         : name === "incorrectCredentials"
         ? incorrectCredentials
+        : name === "missingTitle"
+        ? missingTitle
         : null}
     </div>
   );

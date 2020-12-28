@@ -7,6 +7,7 @@
 :root {
   --rich-black: #020916;
   --rich-blue-black: #041018;
+  --rich-black-opacity: rgb(2, 9, 22, 0.9);
   --prussian-blue: #003554;
   --sapphire-blue: #006494;
   --capri: #47c2ff;
@@ -38,12 +39,26 @@ body {
 h1 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--capri);
 }
 h2 {
   font-size: 2rem;
-  font-weight: 400;
   margin-bottom: 3rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+h1,
+h3,
+h4 {
+  color: var(--capri);
 }
 
 a {
@@ -111,6 +126,11 @@ main {
   min-height: calc(100vh - 11rem);
   justify-content: flex-start;
   padding-top: 1rem;
+}
+.boards-card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* ---------------------- */

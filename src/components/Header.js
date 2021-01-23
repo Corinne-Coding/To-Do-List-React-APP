@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Components
 import DisconnectionButton from "../components/DisconnectionButton";

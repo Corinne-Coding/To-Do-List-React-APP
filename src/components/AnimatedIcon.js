@@ -1,4 +1,3 @@
-import React from "react";
 import UseAnimations from "react-useanimations";
 
 // Icons from https://react.useanimations.com/

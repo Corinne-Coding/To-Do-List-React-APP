@@ -1,5 +1,3 @@
-import React from "react";
-
 // Components
 import AnimatedIcon from "../components/AnimatedIcon";
 
@@ -16,13 +14,21 @@ const Footer = () => {
       </div>
       <div>
         <p>
-          <span>To-do list icon made by&nbsp;</span>
+          <span>To-do list icon & sort icon made by&nbsp;</span>
           <a
             href="https://www.flaticon.com/fr/auteurs/darius-dan"
             target="_blank"
             rel="noreferrer"
           >
             Darius Dan&nbsp;
+          </a>
+          <span>and&nbsp;</span>
+          <a
+            href="https://www.flaticon.com/authors/vectors-market"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Vectors Market&nbsp;
           </a>
           <span>from&nbsp;</span>
           <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer">

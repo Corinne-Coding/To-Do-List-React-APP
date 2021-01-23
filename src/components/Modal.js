@@ -1,29 +1,44 @@
-import React from "react";
-
 // Components
-import FormInput from "../components/FormInput";
+import FormInput from "./FormInput";
 import FormInputButton from "./FormInputButton";
-import ErrorMessage from "../components/ErrorMessage";
-import LoaderAnimation from "../components/LoaderAnimation";
+import ErrorMessage from "./ErrorMessage";
+import LoaderAnimation from "./LoaderAnimation";
 
 const Modal = ({
   setFunction,
   handleFormSubmit,
   error,
-  isLoadingBoardCreation,
+  isLoadingBoard,
   disabled,
+  setDisplayModal,
+  title,
+  inputType,
+  inputPlaceholder,
+  inputValue,
+  buttonText,
 }) => {
   return (
     <div className="modal line-center">
       <form className="column-center" onSubmit={handleFormSubmit}>
-        <h3>Add a board</h3>
-        <FormInput type="text" placeholder="title" setFunction={setFunction} />
+        <i
+          className="fas fa-times"
+          onClick={() => {
+            setDisplayModal(false);
+          }}
+        ></i>
+        <h3>{title}</h3>
+        <FormInput
+          type={inputType}
+          placeholder={inputPlaceholder}
+          setFunction={setFunction}
+          value={inputValue}
+        />
 
         <ErrorMessage name={error} />
 
-        <FormInputButton value="Create board" disabled={disabled} />
+        <FormInputButton value={buttonText} disabled={disabled} />
 
-        {isLoadingBoardCreation ? (
+        {isLoadingBoard ? (
           <LoaderAnimation type="Oval" height={30} width={30} />
         ) : (
           <div className="empty-div"></div>

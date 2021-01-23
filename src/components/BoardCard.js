@@ -1,14 +1,17 @@
-import React from "react";
-
-const BoardCard = ({ boardInfos }) => {
-  // console.log("boardInfos", boardInfos);
+const BoardCard = ({
+  boardInfos,
+  handleRemoveBoard,
+  setDisplayModal,
+  setId,
+  setTitleToUpdate,
+}) => {
   return (
     <div
       className="board-card column-center btn"
       onClick={(e) => {
         if (
-          e.target.className === "board-card column-center btn" ||
-          e.target.className === "board-card-h4"
+          e.target.className !== "fas fa-edit" &&
+          e.target.className !== "fas fa-trash-alt"
         ) {
           console.log("card click");
         }
@@ -16,19 +19,21 @@ const BoardCard = ({ boardInfos }) => {
     >
       <div className="line-center up">
         <i
-          className="fas fa-pen"
+          className="fas fa-edit"
           onClick={(e) => {
-            if (e.target.className === "fas fa-pen") {
-              console.log(boardInfos._id);
+            if (e.target.className === "fas fa-edit") {
+              setDisplayModal(true);
+              setId(boardInfos._id);
+              setTitleToUpdate(boardInfos.title);
             }
           }}
         ></i>
-        <h4 className="board-card-h4">{boardInfos.title}</h4>
+        <h4>{boardInfos.title}</h4>
         <i
-          className="fas fa-times"
+          className="fas fa-trash-alt"
           onClick={(e) => {
-            if (e.target.className === "fas fa-times") {
-              console.log("icon cross click");
+            if (e.target.className === "fas fa-trash-alt") {
+              handleRemoveBoard(boardInfos._id);
             }
           }}
         ></i>

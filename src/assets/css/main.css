@@ -7,7 +7,7 @@
 :root {
   --rich-black: #020916;
   --rich-blue-black: #041018;
-  --rich-black-opacity: rgb(2, 9, 22, 0.9);
+  --rich-black-opacity: rgb(2, 9, 22, 0.8);
   --prussian-blue: #003554;
   --sapphire-blue: #006494;
   --capri: #47c2ff;
@@ -17,6 +17,10 @@
   --imperial-light-red: #ec818f;
   --imperial-red: #f71834;
   --imperial-dark-red: #a50f23;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -37,8 +41,9 @@ body {
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  color: var(--sapphire-blue);
 }
 h2 {
   font-size: 2rem;
@@ -69,6 +74,7 @@ a {
 .container {
   width: 1300px;
   margin: 0 auto;
+  /* border: red solid 2px; */
 }
 
 .line-center {
@@ -93,24 +99,24 @@ a {
 /* ---------------------- */
 /* HEADER */
 /* ---------------------- */
-.header {
-  height: 5rem;
-  background-color: var(--rich-black);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.header,
 .header .container {
   display: flex;
   justify-content: space-between;
 }
+.header {
+  height: 5rem;
+  background-color: var(--rich-black);
+  align-items: center;
+}
 .header .icon {
-  height: 3.5rem;
-  margin-right: 1rem;
+  height: 3.2rem;
+  margin-right: 0.5rem;
 }
 .date {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* ---------------------- */
@@ -118,12 +124,12 @@ a {
 /* ---------------------- */
 main {
   min-height: calc(100vh - 10rem);
+  /* background-color: pink; */
 }
 .main-home {
   min-height: calc(100vh - 5rem);
 }
 .main-boards-page {
-  min-height: calc(100vh - 11rem);
   justify-content: flex-start;
   padding-top: 1rem;
 }
@@ -131,6 +137,7 @@ main {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* ---------------------- */

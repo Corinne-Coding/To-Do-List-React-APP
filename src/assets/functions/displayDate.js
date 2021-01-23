@@ -30,6 +30,8 @@ const displayDate = () => {
     case 6:
       dayName = "Saturday";
       break;
+    default:
+      monthName = null;
   }
   switch (month) {
     case 0:
@@ -68,6 +70,8 @@ const displayDate = () => {
     case 11:
       monthName = "december";
       break;
+    default:
+      monthName = null;
   }
   const sentence = `${dayName}, ${dayNumber} ${monthName} ${year}`;
 

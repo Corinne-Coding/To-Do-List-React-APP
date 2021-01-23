@@ -1,14 +1,13 @@
-import React from "react";
-
 const FormInput = ({ placeholder, type, value, setFunction }) => {
-  const handleInputChange = (value) => {
-    setFunction(value);
+  const handleInputChange = (valueFromInput) => {
+    setFunction(valueFromInput);
   };
 
   return (
     <input
       placeholder={placeholder}
       type={type}
+      maxLength={50}
       className="btn form-input"
       value={value}
       onChange={(event) => {

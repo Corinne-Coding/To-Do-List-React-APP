@@ -1,28 +1,30 @@
-import React from "react";
-
-const passwordsError = "Your passwords must be the same";
-const emptyField = "Please, fill all the fields";
-const takenEmail = "This email already exists";
-const incorrectCredentials = "Incorrect credentials";
-const randomError = "Sorry, an error occurred";
-const missingTitle = "Please, add a title";
+const errors = {
+  passwordsError: "Your passwords must be the same",
+  emptyField: "Please, fill all the fields",
+  existingEmail: "This email already exists",
+  incorrectCredentials: "Incorrect credentials",
+  randomError: "Sorry, an error occurred",
+  missingTitle: "Please, add a title",
+  error: "An error occurred",
+};
 
 const ErrorMessage = ({ name }) => {
-  //   console.log(name);
   return (
     <div className="error-message line-center">
       {name === "passwordsError"
-        ? passwordsError
+        ? errors.passwordsError
         : name === "emptyField"
-        ? emptyField
-        : name === "takenEmail"
-        ? takenEmail
+        ? errors.emptyField
+        : name === "existingEmail"
+        ? errors.existingEmail
         : name === "randomError"
-        ? randomError
+        ? errors.randomError
         : name === "incorrectCredentials"
-        ? incorrectCredentials
+        ? errors.incorrectCredentials
         : name === "missingTitle"
-        ? missingTitle
+        ? errors.missingTitle
+        : name === "error"
+        ? errors.error
         : null}
     </div>
   );

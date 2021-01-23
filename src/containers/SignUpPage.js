@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
@@ -38,7 +38,7 @@ const SignUpPage = ({ handleToken }) => {
           }
         } catch (e) {
           if (e.response.data.error === "This email already has an account.") {
-            setError("takenEmail");
+            setError("existingEmail");
           } else {
             setError("randomError");
           }

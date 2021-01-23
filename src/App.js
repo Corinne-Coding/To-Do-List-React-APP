@@ -15,7 +15,6 @@ import Footer from "./components/Footer";
 const App = () => {
   const [userToken, setUserToken] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [displayModal, setDisplayModal] = useState(false);
 
   useEffect(() => {
     fetchToken();
@@ -32,7 +31,7 @@ const App = () => {
     setIsLoading(false);
   };
 
-  // save / remove token from cookies
+  // save or remove token from cookies
   const handleToken = async (token) => {
     if (token) {
       await Cookies.set("token", token);
@@ -61,12 +60,7 @@ const App = () => {
           {isLoading ? null : !userToken ? (
             <HomePage />
           ) : (
-            <BoardsPage
-              handleToken={handleToken}
-              userToken={userToken}
-              displayModal={displayModal}
-              setDisplayModal={setDisplayModal}
-            />
+            <BoardsPage handleToken={handleToken} userToken={userToken} />
           )}
         </Route>
       </Switch>

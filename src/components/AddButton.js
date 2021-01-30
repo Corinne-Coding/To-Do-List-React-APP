@@ -1,10 +1,11 @@
-const AddButton = ({ setDisplayModal, text }) => {
+const AddButton = ({ setDisplayModal, text, setFunction }) => {
   return (
     <div
       onClick={() => {
         setDisplayModal && setDisplayModal(true);
+        setFunction && setFunction();
       }}
-      className="btn styled-btn blue-btn add-board-btn line-center"
+      className="btn styled-btn blue-btn add-btn line-center"
     >
       {text}
     </div>

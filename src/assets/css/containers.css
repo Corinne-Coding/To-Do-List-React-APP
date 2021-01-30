@@ -1,3 +1,19 @@
+/* A SUPPRIMER */
+:root {
+  --rich-black: #020916;
+  --rich-blue-black: #041018;
+  --rich-black-opacity: rgb(2, 9, 22, 0.8);
+  --prussian-blue: #003554;
+  --sapphire-blue: #006494;
+  --capri: #47c2ff;
+  --alice-blue: #ebf7fe;
+  --white: #fff;
+  --grey: #9b9b9b;
+  --imperial-light-red: #ec818f;
+  --imperial-red: #f71834;
+  --imperial-dark-red: #a50f23;
+}
+
 /* ---------------------- */
 /* HomePage */
 /* ---------------------- */
@@ -29,9 +45,29 @@
 /* BoardPage */
 /* ---------------------- */
 .main-board-page > div:first-child {
-  justify-content: flex-start;
-  border: red solid 2px;
+  margin-top: 1rem;
+  align-items: flex-start;
 }
-.main-board-page > div:first-child > div {
-  margin-left: 10rem;
+.board-page .input-container {
+  width: 50%;
+  margin-right: 2rem;
+}
+.board-page input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: inherit;
+  border: none;
+  border-radius: 0.2rem;
+  font-family: inherit;
+  outline: none;
+  background-color: var(--white);
+  box-shadow: 0.4rem 0.4rem 0.4rem var(--prussian-blue),
+    0 0.1rem 0.5rem var(--prussian-blue);
+  color: var(--rich-blue-black);
+}
+.message-container {
+  align-items: flex-start;
+  height: 3rem;
+  width: 100%;
+  margin-top: 1rem;
 }

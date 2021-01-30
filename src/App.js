@@ -81,3 +81,9 @@ const App = () => {
 };
 
 export default App;
+
+/*
+
+A faire: rendre boutons non cliquables pendant requêtes
+
+*/

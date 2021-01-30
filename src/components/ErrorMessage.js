@@ -1,6 +1,7 @@
 const errors = {
   passwordsError: "Your passwords must be the same",
   emptyField: "Please, fill all the fields",
+  emptyTask: "Your task can't be empty",
   existingEmail: "This email already exists",
   incorrectCredentials: "Incorrect credentials",
   randomError: "Sorry, an error occurred",
@@ -10,7 +11,7 @@ const errors = {
 
 const ErrorMessage = ({ name }) => {
   return (
-    <div className="error-message line-center">
+    <div className=" line-center error-message">
       {name === "passwordsError"
         ? errors.passwordsError
         : name === "emptyField"
@@ -25,6 +26,8 @@ const ErrorMessage = ({ name }) => {
         ? errors.missingTitle
         : name === "error"
         ? errors.error
+        : name === "emptyTask"
+        ? errors.emptyTask
         : null}
     </div>
   );

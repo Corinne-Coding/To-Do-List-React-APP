@@ -31,6 +31,7 @@ const Modal = ({
           type={inputType}
           setFunction={setFunction}
           value={inputValue}
+          placeholder={inputPlaceholder}
         />
 
         <ErrorMessage name={error} />

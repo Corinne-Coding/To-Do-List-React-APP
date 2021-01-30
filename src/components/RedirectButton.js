@@ -4,7 +4,7 @@ const RedirectButton = ({ text, page, style }) => {
   return style === "bordered" ? (
     <Link to={page}>
       <div className="btn styled-btn blue-btn line-center redirect-bordered-btn">
-        <i class="fas fa-arrow-left"></i> <span>boards</span>
+        <i className="fas fa-arrow-left"></i> <span>boards</span>
       </div>
     </Link>
   ) : (

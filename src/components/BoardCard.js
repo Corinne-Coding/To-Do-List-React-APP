@@ -17,7 +17,7 @@ const BoardCard = ({
           e.target.className !== "fas fa-edit" &&
           e.target.className !== "fas fa-trash-alt"
         ) {
-          history.push(`/board/${boardInfos._id}`);
+          history.push(`/board/${boardInfos._id}`, { boardId: boardInfos._id });
         }
       }}
     >

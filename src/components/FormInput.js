@@ -8,7 +8,7 @@ const FormInput = ({ placeholder, type, value, setFunction }) => {
       placeholder={placeholder}
       type={type}
       maxLength={50}
-      className="btn form-input"
+      className="form-input"
       value={value}
       onChange={(event) => {
         handleInputChange(event.target.value);

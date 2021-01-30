@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 // Components
 import AddButton from "../components/AddButton";
 import Header from "../components/Header";
 import RedirectButton from "../components/RedirectButton";
+import ErrorMessage from "../components/ErrorMessage";
+import LoaderAnimation from "../components/LoaderAnimation";
 
 const BoardPage = ({ handleToken, userToken }) => {
-  const [tasks, setTasks] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const history = useHistory();
 
-  // fetch data (board tasks) from API
+  // const [tasks, setTasks] = useState();
+  // const [isLoading, setIsLoading] = useState(true);
+  const [newTask, setNewTask] = useState("");
+  const [error, setError] = useState(null);
+  const [boardId, setBoardId] = useState(history.location.state.boardId);
+  const [isLoadingTask, setIsLoadingTask] = useState(false);
+
+  // // fetch data (board tasks) from API
   // const fetchData = async () => {
   //   try {
   //     const response = await axios.get("http://localhost:3000/boards", {
@@ -30,6 +39,41 @@ const BoardPage = ({ handleToken, userToken }) => {
   //   }
   // };
 
+  // add board
+  const handleAddTask = async () => {
+    if (newTask.length !== 0) {
+      setError(null);
+      try {
+        setIsLoadingTask(true);
+
+        const response = await axios.post(
+          "http://localhost:3000/create/task",
+          {
+            title: newTask,
+            boardId,
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + userToken,
+            },
+          }
+        );
+        // console.log(response.data);
+        if (response.data) {
+          setTimeout(() => {
+            setIsLoadingTask(false);
+            setNewTask("");
+          }, 1500);
+        }
+      } catch (e) {
+        setIsLoadingTask(false);
+        setError(error);
+      }
+    } else {
+      setError("emptyTask");
+    }
+  };
+
   // useEffect(() => {
   //   fetchData();
   // }, []);
@@ -37,12 +81,34 @@ const BoardPage = ({ handleToken, userToken }) => {
   return (
     <>
       <Header handleToken={handleToken} displayDisconnectButton />
-      <main class="container main-board-page">
-        <div className="line-center">
-          <RedirectButton style="bordered" page="/boards" />
-          <div className="line-center">
-            <AddButton text="Add task" />
+      <main className="container main-board-page">
+        <div className="line-center board-page">
+          <div className="input-container column-center">
+            <input
+              type="text"
+              placeholder="Add a task"
+              value={newTask}
+              onChange={(event) => {
+                setNewTask(event.target.value);
+              }}
+            />
+
+            <div className="line-center message-container ">
+              {error && <ErrorMessage name={error} />}
+              {isLoadingTask && (
+                <LoaderAnimation type="Oval" height={20} width={20} />
+              )}
+            </div>
           </div>
+          <AddButton text="Add task" setFunction={handleAddTask} />
+        </div>
+
+        <h3>To do</h3>
+
+        <h3>Done</h3>
+
+        <div style={{ marginTop: "50px" }}>
+          <RedirectButton style="bordered" page="/boards" />
         </div>
       </main>
     </>

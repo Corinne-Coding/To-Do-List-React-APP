@@ -149,8 +149,10 @@ footer {
 }
 footer > div:first-child > p {
   color: var(--capri);
-  margin-right: 0.4rem;
   font-size: 0.9rem;
+}
+footer > div:first-child > p:nth-child(3) {
+  margin-right: 0.4rem;
 }
 footer > div:last-child {
   font-size: 0.7rem;
@@ -160,4 +162,7 @@ footer > div:last-child {
 }
 footer > div:last-child a:hover {
   color: var(--sapphire-blue);
+}
+footer img {
+  height: 1.6rem;
 }

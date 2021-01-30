@@ -1,11 +1,16 @@
 // Components
 import AnimatedIcon from "../components/AnimatedIcon";
 
+// Images
+import ReactImg from "../assets/img/react.png";
+
 const Footer = () => {
   return (
     <footer className="column-center">
       <div className="line-center">
-        <p>Made by Corinne - 2020</p>
+        <p>To-do List Project made with</p>
+        <img src={ReactImg} alt="react icon" />
+        <p>by Corinne - 2020</p>
         <AnimatedIcon name="github" link="https://github.com/Corinne-Coding" />
         <AnimatedIcon
           name="linkedin"

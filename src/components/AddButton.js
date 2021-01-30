@@ -1,14 +1,14 @@
-const AddBoardButton = ({ setDisplayModal }) => {
+const AddButton = ({ setDisplayModal, text }) => {
   return (
     <div
       onClick={() => {
-        setDisplayModal(true);
+        setDisplayModal && setDisplayModal(true);
       }}
       className="btn styled-btn blue-btn add-board-btn line-center"
     >
-      Add a board
+      {text}
     </div>
   );
 };
 
-export default AddBoardButton;
+export default AddButton;

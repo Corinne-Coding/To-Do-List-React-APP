@@ -40,6 +40,7 @@ const App = () => {
       await Cookies.remove("token");
       setUserToken(null);
     }
+    return true;
   };
 
   return (
@@ -48,20 +49,29 @@ const App = () => {
         <Route path="/signin">
           <SignInPage handleToken={handleToken} />
         </Route>
+
         <Route path="/signup">
           <SignUpPage handleToken={handleToken} />
         </Route>
 
-        <Route path="/board">
-          <BoardPage />
+        <Route path="/board/:id">
+          {userToken ? (
+            <BoardPage handleToken={handleToken} userToken={userToken} />
+          ) : (
+            <HomePage />
+          )}
+        </Route>
+
+        <Route path="/boards">
+          {userToken ? (
+            <BoardsPage handleToken={handleToken} userToken={userToken} />
+          ) : (
+            <HomePage />
+          )}
         </Route>
 
         <Route path="/">
-          {isLoading ? null : !userToken ? (
-            <HomePage />
-          ) : (
-            <BoardsPage handleToken={handleToken} userToken={userToken} />
-          )}
+          <HomePage />
         </Route>
       </Switch>
 

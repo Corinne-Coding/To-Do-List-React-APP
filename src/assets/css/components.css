@@ -182,10 +182,18 @@
 /* ---------------------- */
 /* RedirectButton - COMPONENT */
 /* ---------------------- */
-.redirect-button {
+.redirect-lined-btn {
   color: var(--grey);
   font-size: 0.8rem;
 }
-.redirect-button:hover {
+.redirect-lined-btn:hover {
   color: var(--sapphire-blue);
+}
+.redirect-bordered-btn {
+  width: 8rem;
+  padding: 0.8rem;
+  background-color: var(--prussian-blue);
+}
+.redirect-bordered-btn i {
+  margin-right: 1rem;
 }

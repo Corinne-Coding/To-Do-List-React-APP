@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 // Components
-import AddBoardButton from "../components/AddBoardButton";
+import AddButton from "../components/AddButton";
 import BoardCard from "../components/BoardCard";
 import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
@@ -41,7 +41,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
   };
 
   // add board
-  const handleCreationBoardSubmit = async (event) => {
+  const handleAddBoardSubmit = async (event) => {
     event.preventDefault();
     if (title.length !== 0) {
       setError(null);
@@ -137,7 +137,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
       {displayAddBoardModal ? (
         <Modal
           setFunction={setTitle}
-          handleFormSubmit={handleCreationBoardSubmit}
+          handleFormSubmit={handleAddBoardSubmit}
           error={error}
           isLoadingBoard={isLoadingBoard}
           disabled={isLoadingBoard ? true : false}
@@ -169,7 +169,10 @@ const BoardsPage = ({ handleToken, userToken }) => {
         </main>
       ) : (
         <main className="column-center main-boards-page container">
-          <AddBoardButton setDisplayModal={setDisplayAddBoardModal} />
+          <AddButton
+            setDisplayModal={setDisplayAddBoardModal}
+            text="Add a board"
+          />
 
           <div className="boards-card-container">
             {boards.map((board, index) => {

@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+
 const BoardCard = ({
   boardInfos,
   handleRemoveBoard,
@@ -5,6 +7,8 @@ const BoardCard = ({
   setId,
   setTitleToUpdate,
 }) => {
+  const history = useHistory();
+
   return (
     <div
       className="board-card column-center btn"
@@ -13,7 +17,7 @@ const BoardCard = ({
           e.target.className !== "fas fa-edit" &&
           e.target.className !== "fas fa-trash-alt"
         ) {
-          console.log("card click");
+          history.push(`/board/${boardInfos._id}`);
         }
       }}
     >

@@ -29,7 +29,6 @@ const Modal = ({
         <h3>{title}</h3>
         <FormInput
           type={inputType}
-          placeholder={inputPlaceholder}
           setFunction={setFunction}
           value={inputValue}
         />

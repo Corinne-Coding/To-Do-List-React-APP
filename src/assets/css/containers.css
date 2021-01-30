@@ -26,5 +26,12 @@
 }
 
 /* ---------------------- */
-/* BoardsPage */
+/* BoardPage */
 /* ---------------------- */
+.main-board-page > div:first-child {
+  justify-content: flex-start;
+  border: red solid 2px;
+}
+.main-board-page > div:first-child > div {
+  margin-left: 10rem;
+}

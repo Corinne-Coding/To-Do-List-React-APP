@@ -198,3 +198,20 @@
 .redirect-bordered-btn i {
   margin-right: 1rem;
 }
+
+/* ---------------------- */
+/* TaskCard - COMPONENT */
+/* ---------------------- */
+.task-card {
+  border: green solid 1px;
+  height: 3rem;
+  width: 70%;
+  border-bottom: var(--grey) solid 1px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.task-card h4 {
+  text-align: start;
+  width: 100%;
+  margin: 0 1rem;
+}

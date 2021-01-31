@@ -1,3 +1,6 @@
+// Components
+import CardTitle from "../components/CardTitle";
+
 import { useHistory } from "react-router-dom";
 
 const BoardCard = ({
@@ -32,7 +35,7 @@ const BoardCard = ({
             }
           }}
         ></i>
-        <h4>{boardInfos.title}</h4>
+        <CardTitle title={boardInfos.title} />
         <i
           className="fas fa-trash-alt"
           onClick={(e) => {

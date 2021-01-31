@@ -44,7 +44,7 @@
 /* ---------------------- */
 /* BoardPage */
 /* ---------------------- */
-.main-board-page > div:first-child {
+.board-page {
   margin-top: 1rem;
   align-items: flex-start;
 }
@@ -70,4 +70,10 @@
   height: 3rem;
   width: 100%;
   margin-top: 1rem;
+}
+section {
+  /* border: orange solid 2px; */
+}
+.to-do {
+  margin-bottom: 2rem;
 }

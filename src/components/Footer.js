@@ -19,15 +19,44 @@ const Footer = () => {
       </div>
       <div>
         <p>
-          <span>To-do list icon & sort icon made by&nbsp;</span>
+          <span>Icon made by&nbsp;</span>
+
           <a
             href="https://www.flaticon.com/fr/auteurs/darius-dan"
             target="_blank"
             rel="noreferrer"
           >
-            Darius Dan&nbsp;
+            Darius Dan
           </a>
-          <span>and&nbsp;</span>
+          <span>,&nbsp;</span>
+
+          <a
+            href="https://www.flaticon.com/authors/icongeek26"
+            target="_blank"
+            rel="noreferrer"
+          >
+            IconGeek26
+          </a>
+          <span>,&nbsp;</span>
+
+          <a
+            href="https://www.flaticon.com/authors/kiranshastry"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Kiranshastry
+          </a>
+          <span>,&nbsp;</span>
+
+          <a
+            href="https://www.flaticon.com/authors/pixel-perfect"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Pixel Perfect
+          </a>
+          <span>&nbsp;and&nbsp;</span>
+
           <a
             href="https://www.flaticon.com/authors/vectors-market"
             target="_blank"

@@ -33,7 +33,7 @@ const BoardPage = ({ handleToken, userToken }) => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data) {
         setTasks(response.data);
       }
@@ -95,7 +95,11 @@ const BoardPage = ({ handleToken, userToken }) => {
         </main>
       ) : (
         <main className="container main-board-page">
-          <div className="line-center board-page">
+          <RedirectButton style="bordered" page="/boards" />
+
+          <h2>{history.location.state.boardTitle}</h2>
+
+          <div className="line-center top-part">
             <div className="input-container column-center">
               <input
                 type="text"
@@ -117,27 +121,45 @@ const BoardPage = ({ handleToken, userToken }) => {
             <AddButton text="Add task" setFunction={handleAddTask} />
           </div>
 
-          <section class="to-do column-center">
+          <section className="column-center">
             <CardTitle title="To do" />
-            {tasks.map((task) => {
-              if (!task.done) {
-                return <TaskCard title={task.title} />;
-              }
-            })}
+
+            {tasks.length > 0 ? (
+              tasks.map((task, index) => {
+                let isPresent = false;
+                if (!task.done) {
+                  isPresent = true;
+                  if (isPresent) {
+                    return <TaskCard key={task._id} title={task.title} />;
+                  } else {
+                    return <p key={index}>EMPTY</p>;
+                  }
+                }
+              })
+            ) : (
+              <p>EMPTY</p>
+            )}
           </section>
 
-          <section class="done column-center">
+          <section className="column-center">
             <CardTitle title="Done" />
-            {tasks.map((task) => {
-              if (task.done) {
-                return <TaskCard title={task.title} />;
-              }
-            })}
+            {tasks.length > 0 ? (
+              tasks.map((task, index) => {
+                console.log(task);
+                let isPresent = false;
+                if (task.done) {
+                  isPresent = true;
+                  if (isPresent) {
+                    return <TaskCard key={task._id} title={task.title} />;
+                  } else {
+                    return <p key={index}>EMPTY</p>;
+                  }
+                }
+              })
+            ) : (
+              <p>EMPTY</p>
+            )}
           </section>
-
-          <div style={{ marginTop: "50px" }}>
-            <RedirectButton style="bordered" page="/boards" />
-          </div>
         </main>
       )}
     </>

@@ -44,15 +44,22 @@
 /* ---------------------- */
 /* BoardPage */
 /* ---------------------- */
-.board-page {
-  margin-top: 1rem;
+.main-board-page {
+  position: relative;
+}
+.main-board-page > h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1rem 0 2rem 0;
+}
+.top-part {
   align-items: flex-start;
 }
-.board-page .input-container {
-  width: 50%;
-  margin-right: 2rem;
+.top-part .input-container {
+  width: 60%;
+  margin-right: 1rem;
 }
-.board-page input {
+.top-part input {
   width: 100%;
   padding: 0.7rem;
   font-size: inherit;
@@ -71,9 +78,11 @@
   width: 100%;
   margin-top: 1rem;
 }
-section {
-  /* border: orange solid 2px; */
+.main-board-page section h3 {
+  text-align: start;
+  width: 70%;
+  margin-bottom: 1rem;
 }
-.to-do {
-  margin-bottom: 2rem;
+.main-board-page section:nth-child(4) {
+  margin-bottom: 3rem;
 }

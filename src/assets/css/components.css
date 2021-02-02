@@ -113,6 +113,16 @@
 }
 
 /* ---------------------- */
+/* EmptyLine - COMPONENT */
+/* ---------------------- */
+.empty-line {
+  color: var(--grey);
+  text-align: start;
+  width: 70%;
+  font-style: italic;
+}
+
+/* ---------------------- */
 /* ErrorMessage - COMPONENT */
 /* ---------------------- */
 .error-message {

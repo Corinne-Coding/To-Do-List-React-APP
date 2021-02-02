@@ -10,6 +10,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import LoaderAnimation from "../components/LoaderAnimation";
 import CardTitle from "../components/CardTitle";
 import TaskCard from "../components/TaskCard";
+import EmptyLine from "../components/EmptyLine";
 
 const BoardPage = ({ handleToken, userToken }) => {
   const history = useHistory();
@@ -21,9 +22,6 @@ const BoardPage = ({ handleToken, userToken }) => {
   const [boardId, setBoardId] = useState(history.location.state.boardId);
   const [isLoadingTask, setIsLoadingTask] = useState(false);
   const [addTask, setAddTask] = useState(true);
-
-  const [isPresentDone, setIsPresentDone] = useState(false);
-  const [isPresentToDo, setIsPresentToDo] = useState(false);
 
   // fetch data (tasks) from API
   const fetchData = async () => {
@@ -127,30 +125,21 @@ const BoardPage = ({ handleToken, userToken }) => {
           <section className="column-center">
             <CardTitle title="To do" />
 
-            {tasks.length > 0 ? (
-              tasks.map((task) => {
-                if (!task.done) {
-                  !isPresentToDo && setIsPresentToDo(true);
-                  return <TaskCard key={task._id} title={task.title} />;
-                }
-              })
-            ) : tasks.length === 0 || !isPresentToDo ? (
-              <p>EMPTY</p>
-            ) : null}
+            {tasks.todo.length > 0 &&
+              tasks.todo.map((task) => {
+                return <TaskCard key={task._id} title={task.title} />;
+              })}
+
+            {tasks.todo.length === 0 && <EmptyLine text="No task yet" />}
           </section>
 
           <section className="column-center">
             <CardTitle title="Done" />
-            {tasks.length > 0 ? (
-              tasks.map((task) => {
-                if (task.done) {
-                  !isPresentDone && setIsPresentDone(true);
-                  return <TaskCard key={task._id} title={task.title} />;
-                }
-              })
-            ) : tasks.length === 0 || !isPresentDone ? (
-              <p>EMPTY</p>
-            ) : null}
+            {tasks.done.length > 0 &&
+              tasks.done.map((task) => {
+                return <TaskCard key={task._id} title={task.title} />;
+              })}
+            {tasks.done.length === 0 && <EmptyLine text="No task yet" />}
           </section>
         </main>
       )}

@@ -72,8 +72,9 @@ a {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1360px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .line-center {

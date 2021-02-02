@@ -23,6 +23,7 @@ const App = () => {
   // get token from cookies
   const fetchToken = async () => {
     const token = await Cookies.get("token");
+    console.log(token);
     if (token) {
       setUserToken(token);
     } else {
@@ -62,16 +63,12 @@ const App = () => {
           )}
         </Route>
 
-        <Route path="/boards">
-          {userToken ? (
+        <Route path="/">
+          {userToken && !isLoading ? (
             <BoardsPage handleToken={handleToken} userToken={userToken} />
           ) : (
             <HomePage />
           )}
-        </Route>
-
-        <Route path="/">
-          <HomePage />
         </Route>
       </Switch>
 

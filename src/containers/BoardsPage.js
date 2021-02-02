@@ -34,7 +34,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
       }
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
       alert("An error occurred");
     }

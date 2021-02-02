@@ -32,7 +32,7 @@ const SignUpPage = ({ handleToken }) => {
 
           if (response.data.token) {
             handleToken(response.data.token);
-            history.push("/boards");
+            history.push("/");
           } else {
             setError("randomError");
           }

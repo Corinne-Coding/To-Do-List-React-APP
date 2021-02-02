@@ -22,6 +22,9 @@ const BoardPage = ({ handleToken, userToken }) => {
   const [isLoadingTask, setIsLoadingTask] = useState(false);
   const [addTask, setAddTask] = useState(true);
 
+  const [isPresentDone, setIsPresentDone] = useState(false);
+  const [isPresentToDo, setIsPresentToDo] = useState(false);
+
   // fetch data (tasks) from API
   const fetchData = async () => {
     try {
@@ -39,7 +42,7 @@ const BoardPage = ({ handleToken, userToken }) => {
       }
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
       alert("An error occurred");
     }
@@ -95,7 +98,7 @@ const BoardPage = ({ handleToken, userToken }) => {
         </main>
       ) : (
         <main className="container main-board-page">
-          <RedirectButton style="bordered" page="/boards" />
+          <RedirectButton style="bordered" page="/" />
 
           <h2>{history.location.state.boardTitle}</h2>
 
@@ -125,40 +128,29 @@ const BoardPage = ({ handleToken, userToken }) => {
             <CardTitle title="To do" />
 
             {tasks.length > 0 ? (
-              tasks.map((task, index) => {
-                let isPresent = false;
+              tasks.map((task) => {
                 if (!task.done) {
-                  isPresent = true;
-                  if (isPresent) {
-                    return <TaskCard key={task._id} title={task.title} />;
-                  } else {
-                    return <p key={index}>EMPTY</p>;
-                  }
+                  !isPresentToDo && setIsPresentToDo(true);
+                  return <TaskCard key={task._id} title={task.title} />;
                 }
               })
-            ) : (
+            ) : tasks.length === 0 || !isPresentToDo ? (
               <p>EMPTY</p>
-            )}
+            ) : null}
           </section>
 
           <section className="column-center">
             <CardTitle title="Done" />
             {tasks.length > 0 ? (
-              tasks.map((task, index) => {
-                console.log(task);
-                let isPresent = false;
+              tasks.map((task) => {
                 if (task.done) {
-                  isPresent = true;
-                  if (isPresent) {
-                    return <TaskCard key={task._id} title={task.title} />;
-                  } else {
-                    return <p key={index}>EMPTY</p>;
-                  }
+                  !isPresentDone && setIsPresentDone(true);
+                  return <TaskCard key={task._id} title={task.title} />;
                 }
               })
-            ) : (
+            ) : tasks.length === 0 || !isPresentDone ? (
               <p>EMPTY</p>
-            )}
+            ) : null}
           </section>
         </main>
       )}

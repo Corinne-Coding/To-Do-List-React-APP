@@ -28,7 +28,7 @@ const SignInPage = ({ handleToken }) => {
         // console.log(response.data);
         if (response.data.token) {
           handleToken(response.data.token);
-          history.push("/boards");
+          history.push("/");
         } else {
           setError("randomError");
         }

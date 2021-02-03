@@ -19,32 +19,10 @@ const BoardPage = ({ handleToken, userToken }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [newTask, setNewTask] = useState("");
   const [error, setError] = useState(null);
-  const [boardId, setBoardId] = useState(history.location.state.boardId);
+  const [boardId] = useState(history.location.state.boardId);
   const [isLoadingTask, setIsLoadingTask] = useState(false);
   const [addTask, setAddTask] = useState(true);
-
-  // fetch data (tasks) from API
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/tasks/${boardId}`,
-        {
-          headers: {
-            Authorization: "Bearer " + userToken,
-          },
-        }
-      );
-      // console.log(response.data);
-      if (response.data) {
-        setTasks(response.data);
-      }
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    } catch (error) {
-      alert("An error occurred");
-    }
-  };
+  const [reload, setReload] = useState(false);
 
   // add board
   const handleAddTask = async () => {
@@ -82,9 +60,63 @@ const BoardPage = ({ handleToken, userToken }) => {
     }
   };
 
+  // update task
+  const handleUpdateTask = async (id, done, title) => {
+    try {
+      if (done === true || done === false || title) {
+        setReload(false);
+        const obj = {};
+        if (done === true || done === false) {
+          obj.done = done;
+        } else if (title) {
+          obj.title = title;
+        }
+        const response = await axios.put(
+          `http://localhost:3000/update/task/${id}`,
+          obj,
+          {
+            headers: {
+              Authorization: "Bearer " + userToken,
+            },
+          }
+        );
+        console.log(response.data);
+        setReload(true);
+      } else {
+        return;
+      }
+    } catch (e) {
+      alert("error");
+      setReload(true);
+    }
+  };
+
   useEffect(() => {
+    // fetch data (tasks) from API
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/tasks/${boardId}`,
+          {
+            headers: {
+              Authorization: "Bearer " + userToken,
+            },
+          }
+        );
+        // console.log(response.data);
+        if (response.data) {
+          setTasks(response.data);
+        }
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+      } catch (error) {
+        alert("An error occurred");
+      }
+    };
+
     fetchData();
-  }, [addTask]);
+  }, [addTask, reload, boardId, userToken]);
 
   return (
     <>
@@ -127,7 +159,15 @@ const BoardPage = ({ handleToken, userToken }) => {
 
             {tasks.todo.length > 0 &&
               tasks.todo.map((task) => {
-                return <TaskCard key={task._id} title={task.title} />;
+                return (
+                  <TaskCard
+                    key={task._id}
+                    title={task.title}
+                    taskId={task._id}
+                    done={task.done}
+                    handleUpdateTask={handleUpdateTask}
+                  />
+                );
               })}
 
             {tasks.todo.length === 0 && <EmptyLine text="No task to do yet" />}
@@ -137,7 +177,15 @@ const BoardPage = ({ handleToken, userToken }) => {
             <CardTitle title="Done" />
             {tasks.done.length > 0 &&
               tasks.done.map((task) => {
-                return <TaskCard key={task._id} title={task.title} />;
+                return (
+                  <TaskCard
+                    key={task._id}
+                    title={task.title}
+                    taskId={task._id}
+                    done={task.done}
+                    handleUpdateTask={handleUpdateTask}
+                  />
+                );
               })}
             {tasks.done.length === 0 && <EmptyLine text="No task done yet" />}
           </section>

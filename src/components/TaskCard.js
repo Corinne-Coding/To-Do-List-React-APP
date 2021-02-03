@@ -15,7 +15,7 @@ import CancelDark from "../assets/icons/cancel-dark.svg";
 // Components
 import Icon from "../components/Icon";
 
-const TaskCard = ({ title }) => {
+const TaskCard = ({ title, taskId, done, handleUpdateTask }) => {
   const [hoverSelect, setHoverSelect] = useState(false);
   const [hoverTrash, setHoverTrash] = useState(false);
   const [hoverEdit, setHoverEdit] = useState(false);
@@ -36,6 +36,9 @@ const TaskCard = ({ title }) => {
         icon1={Circle}
         icon2={CheckCircle}
         iconName="circle icon"
+        onClickFunction={() => {
+          handleUpdateTask(taskId, !done, null);
+        }}
       />
 
       <div className="input-container">
@@ -53,6 +56,10 @@ const TaskCard = ({ title }) => {
               icon1={CheckDark}
               icon2={CheckLight}
               iconName="check icon"
+              onClickFunction={() => {
+                handleUpdateTask(taskId, null, text);
+                setEdit(false);
+              }}
             />
             <Icon
               setHover={setHoverCancel}

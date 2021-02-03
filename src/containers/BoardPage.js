@@ -24,8 +24,9 @@ const BoardPage = ({ handleToken, userToken }) => {
   const [addTask, setAddTask] = useState(true);
   const [reload, setReload] = useState(false);
 
-  // add board
+  // add task
   const handleAddTask = async () => {
+    setReload(false);
     if (newTask.length !== 0) {
       setError(null);
       try {
@@ -49,7 +50,8 @@ const BoardPage = ({ handleToken, userToken }) => {
             setIsLoadingTask(false);
             setNewTask("");
             setAddTask(!setAddTask);
-          }, 1500);
+            setReload(true);
+          }, 1000);
         }
       } catch (e) {
         setIsLoadingTask(false);
@@ -63,7 +65,7 @@ const BoardPage = ({ handleToken, userToken }) => {
   // update task
   const handleUpdateTask = async (id, done, title) => {
     try {
-      if (done === true || done === false || title) {
+      if (id && (done === true || done === false || title)) {
         setReload(false);
         const obj = {};
         if (done === true || done === false) {
@@ -86,7 +88,31 @@ const BoardPage = ({ handleToken, userToken }) => {
         return;
       }
     } catch (e) {
-      alert("error");
+      alert("An error occurred");
+      setReload(true);
+    }
+  };
+
+  // delete task
+  const handleDeleteTask = async (id) => {
+    try {
+      if (id) {
+        setReload(false);
+        const response = await axios.delete(
+          `http://localhost:3000/delete/task/${id}`,
+          {
+            headers: {
+              Authorization: "Bearer " + userToken,
+            },
+          }
+        );
+        console.log(response.data);
+        setReload(true);
+      } else {
+        return;
+      }
+    } catch (e) {
+      alert("An error occurred");
       setReload(true);
     }
   };
@@ -138,7 +164,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                 type="text"
                 placeholder="Add a task"
                 value={newTask}
-                maxLength={100}
+                maxLength={80}
                 onChange={(event) => {
                   setNewTask(event.target.value);
                 }}
@@ -166,6 +192,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                     taskId={task._id}
                     done={task.done}
                     handleUpdateTask={handleUpdateTask}
+                    handleDeleteTask={handleDeleteTask}
                   />
                 );
               })}
@@ -184,6 +211,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                     taskId={task._id}
                     done={task.done}
                     handleUpdateTask={handleUpdateTask}
+                    handleDeleteTask={handleDeleteTask}
                   />
                 );
               })}

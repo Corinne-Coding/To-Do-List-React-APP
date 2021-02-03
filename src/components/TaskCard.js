@@ -15,7 +15,13 @@ import CancelDark from "../assets/icons/cancel-dark.svg";
 // Components
 import Icon from "../components/Icon";
 
-const TaskCard = ({ title, taskId, done, handleUpdateTask }) => {
+const TaskCard = ({
+  title,
+  taskId,
+  done,
+  handleUpdateTask,
+  handleDeleteTask,
+}) => {
   const [hoverSelect, setHoverSelect] = useState(false);
   const [hoverTrash, setHoverTrash] = useState(false);
   const [hoverEdit, setHoverEdit] = useState(false);
@@ -74,7 +80,13 @@ const TaskCard = ({ title, taskId, done, handleUpdateTask }) => {
             />
           </div>
         ) : (
-          <input type="text" value={title} className="disabled" disabled />
+          <input
+            type="text"
+            value={title}
+            className="disabled"
+            disabled
+            maxLength={80}
+          />
         )}
       </div>
 
@@ -95,6 +107,9 @@ const TaskCard = ({ title, taskId, done, handleUpdateTask }) => {
           icon1={Trash}
           icon2={OpenTrash}
           iconName="trash icon"
+          onClickFunction={() => {
+            handleDeleteTask(taskId);
+          }}
         />
       </div>
     </div>

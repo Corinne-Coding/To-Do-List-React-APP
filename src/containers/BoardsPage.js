@@ -165,7 +165,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
       <Header handleToken={handleToken} displayDisconnectButton />
       {isLoading ? (
         <main className="line-center container">
-          <LoaderAnimation type="ThreeDots" height={100} width={100} />
+          <LoaderAnimation type="ThreeDots" height="10vh" width="10vw" />
         </main>
       ) : (
         <main className="column-center main-boards-page container">

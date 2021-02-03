@@ -192,8 +192,8 @@
   margin-bottom: 3rem;
 }
 .empty-div {
-  height: 2rem;
-  background-color: red;
+  height: 3rem;
+  width: 3rem;
 }
 .modal .fa-times {
   display: block;
@@ -231,26 +231,48 @@
 /* TaskCard - COMPONENT */
 /* ---------------------- */
 .task-card {
-  /* border: green solid 1px; */
   height: 3rem;
   width: 70%;
-  border-bottom: var(--grey) solid 1px;
+  border-bottom: var(--grey) solid 0.1rem;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.task-card h4 {
-  text-align: start;
+.task-card .input-container {
   width: 100%;
   margin: 0 1rem;
 }
+.task-card input {
+  margin-right: 0.4rem;
+}
+.task-card .input-container > div,
+.task-card .input-container > div {
+  height: 2rem;
+  justify-content: flex-start;
+}
+.task-card .input-container .enabled,
+.task-card .input-container .disabled {
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 0.4rem;
+  border-radius: 0.2rem;
+  width: 80%;
+}
+.task-card .input-container .enabled {
+  background-color: var(--alice-blue);
+  color: var(--rich-blue-black);
+}
+.task-card .input-container .disabled {
+  background-color: var(--rich-blue-black);
+  color: var(--alice-blue);
+}
+.task-card .input-container img {
+  margin: 0 0.2rem;
+  height: 1.4rem;
+}
 .task-card img {
   height: 1rem;
-}
-
-.hover {
-  color: red;
-}
-
-.not-hover {
-  color: blue;
+  cursor: pointer;
 }

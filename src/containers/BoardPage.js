@@ -92,7 +92,7 @@ const BoardPage = ({ handleToken, userToken }) => {
 
       {isLoading ? (
         <main className="line-center container">
-          <LoaderAnimation type="ThreeDots" height={100} width={100} />
+          <LoaderAnimation type="Circles" height="10vh" width="10vw" />
         </main>
       ) : (
         <main className="container main-board-page">
@@ -115,7 +115,7 @@ const BoardPage = ({ handleToken, userToken }) => {
               <div className="line-center message-container ">
                 {error && <ErrorMessage name={error} />}
                 {isLoadingTask && (
-                  <LoaderAnimation type="Oval" height={20} width={20} />
+                  <LoaderAnimation type="Oval" height="1.8rem" width="1.8rem" />
                 )}
               </div>
             </div>
@@ -130,7 +130,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                 return <TaskCard key={task._id} title={task.title} />;
               })}
 
-            {tasks.todo.length === 0 && <EmptyLine text="No task yet" />}
+            {tasks.todo.length === 0 && <EmptyLine text="No task to do yet" />}
           </section>
 
           <section className="column-center">
@@ -139,7 +139,7 @@ const BoardPage = ({ handleToken, userToken }) => {
               tasks.done.map((task) => {
                 return <TaskCard key={task._id} title={task.title} />;
               })}
-            {tasks.done.length === 0 && <EmptyLine text="No task yet" />}
+            {tasks.done.length === 0 && <EmptyLine text="No task done yet" />}
           </section>
         </main>
       )}

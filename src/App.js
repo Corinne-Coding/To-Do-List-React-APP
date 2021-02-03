@@ -23,7 +23,6 @@ const App = () => {
   // get token from cookies
   const fetchToken = async () => {
     const token = await Cookies.get("token");
-    console.log(token);
     if (token) {
       setUserToken(token);
     } else {

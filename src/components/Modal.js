@@ -39,7 +39,9 @@ const Modal = ({
         <FormInputButton value={buttonText} disabled={disabled} />
 
         {isLoadingBoard ? (
-          <LoaderAnimation type="Oval" height={30} width={30} />
+          <div className="empty-div line-center">
+            <LoaderAnimation type="Oval" height="2rem" width="2rem" />
+          </div>
         ) : (
           <div className="empty-div"></div>
         )}

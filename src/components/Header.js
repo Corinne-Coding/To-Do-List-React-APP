@@ -16,11 +16,7 @@ const Header = ({ handleToken, displayDisconnectButton }) => {
   return (
     <div className="header">
       <div className="container">
-        {/* <div className="line-center"> */}
-        <RedirectButton style="icon" icon={list} page="/" />
-        {/* <img src={list} className="icon" alt="icon" />
-        <h1>To-do List</h1> */}
-        {/* </div> */}
+        <RedirectButton styled="icon" icon={list} page="/" />
 
         <div className="line-center">
           <div className="line-center">

@@ -68,7 +68,11 @@ const SignInPage = ({ handleToken }) => {
 
           <FormInputButton value="Submit" disabled={false} />
 
-          <RedirectButton text="Create an account ? Sign up" page="/signup" />
+          <RedirectButton
+            text="Create an account ? Sign up"
+            page="/signup"
+            styled="line"
+          />
         </form>
       </main>
     </>

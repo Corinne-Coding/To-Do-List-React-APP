@@ -92,6 +92,7 @@ const SignUpPage = ({ handleToken }) => {
           <RedirectButton
             text="Already have an account ? Sign in"
             page="/signin"
+            styled="line"
           />
         </form>
       </main>

@@ -96,7 +96,7 @@ const BoardPage = ({ handleToken, userToken }) => {
         </main>
       ) : (
         <main className="container main-board-page">
-          <RedirectButton style="bordered" page="/" />
+          <RedirectButton styled="bordered" page="/" />
 
           <h2>{history.location.state.boardTitle}</h2>
 

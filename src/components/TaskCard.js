@@ -5,12 +5,15 @@ import Circle from "../assets/icons/circle.svg";
 import CheckCircle from "../assets/icons/check-circle.svg";
 import Trash from "../assets/icons/trash.svg";
 import OpenTrash from "../assets/icons/open-trash.svg";
-import Pen from "../assets/icons/pen.svg";
-import Edit from "../assets/icons/edit.svg";
+import PencilLight from "../assets/icons/pencil-light.svg";
+import PencilDark from "../assets/icons/pencil-dark.svg";
 import CheckLight from "../assets/icons/check-light.svg";
 import CheckDark from "../assets/icons/check-dark.svg";
 import CancelLight from "../assets/icons/cancel-light.svg";
 import CancelDark from "../assets/icons/cancel-dark.svg";
+
+// Components
+import Icon from "../components/Icon";
 
 const TaskCard = ({ title }) => {
   const [hoverSelect, setHoverSelect] = useState(false);
@@ -27,15 +30,12 @@ const TaskCard = ({ title }) => {
 
   return (
     <div className="task-card line-center">
-      <img
-        onMouseEnter={() => {
-          setHoverSelect(true);
-        }}
-        onMouseLeave={() => {
-          setHoverSelect(false);
-        }}
-        src={!hoverSelect ? Circle : CheckCircle}
-        alt="circle icon"
+      <Icon
+        setHover={setHoverSelect}
+        hover={hoverSelect}
+        icon1={Circle}
+        icon2={CheckCircle}
+        iconName="circle icon"
       />
 
       <div className="input-container">
@@ -47,25 +47,23 @@ const TaskCard = ({ title }) => {
               className="enabled"
               onChange={handleInputChange}
             />
-            <img
-              onMouseEnter={() => {
-                setHoverCheck(true);
-              }}
-              onMouseLeave={() => {
-                setHoverCheck(false);
-              }}
-              src={hoverCheck ? CheckLight : CheckDark}
-              alt="check icon"
+            <Icon
+              setHover={setHoverCheck}
+              hover={hoverCheck}
+              icon1={CheckDark}
+              icon2={CheckLight}
+              iconName="check icon"
             />
-            <img
-              onMouseEnter={() => {
-                setHoverCancel(true);
-              }}
-              onMouseLeave={() => {
+            <Icon
+              setHover={setHoverCancel}
+              hover={hoverCancel}
+              icon1={CancelDark}
+              icon2={CancelLight}
+              iconName="cancel icon"
+              onClickFunction={() => {
+                setEdit(false);
                 setHoverCancel(false);
               }}
-              src={hoverCancel ? CancelLight : CancelDark}
-              alt="cancel icon"
             />
           </div>
         ) : (
@@ -74,29 +72,22 @@ const TaskCard = ({ title }) => {
       </div>
 
       <div className="line-center">
-        <img
-          onMouseEnter={() => {
-            setHoverEdit(true);
-          }}
-          onMouseLeave={() => {
-            setHoverEdit(false);
-          }}
-          onClick={() => {
+        <Icon
+          setHover={setHoverEdit}
+          hover={hoverEdit}
+          icon1={PencilLight}
+          icon2={PencilDark}
+          iconName="pencil icon"
+          onClickFunction={() => {
             setEdit(true);
           }}
-          src={!hoverEdit ? Pen : Edit}
-          alt="edit icon"
         />
-
-        <img
-          onMouseEnter={() => {
-            setHoverTrash(true);
-          }}
-          onMouseLeave={() => {
-            setHoverTrash(false);
-          }}
-          src={!hoverTrash ? Trash : OpenTrash}
-          alt="trash icon"
+        <Icon
+          setHover={setHoverTrash}
+          hover={hoverTrash}
+          icon1={Trash}
+          icon2={OpenTrash}
+          iconName="trash icon"
         />
       </div>
     </div>
@@ -104,7 +95,3 @@ const TaskCard = ({ title }) => {
 };
 
 export default TaskCard;
-
-/*
-
-*/

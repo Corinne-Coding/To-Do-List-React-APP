@@ -170,7 +170,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                 }}
               />
 
-              <div className="line-center message-container ">
+              <div className="line-center message-container">
                 {error && <ErrorMessage name={error} />}
                 {isLoadingTask && (
                   <LoaderAnimation type="Oval" height="1.8rem" width="1.8rem" />

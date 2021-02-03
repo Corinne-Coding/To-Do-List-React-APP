@@ -73,12 +73,6 @@
     0 0.1rem 0.5rem var(--prussian-blue);
   color: var(--rich-blue-black);
 }
-.message-container {
-  align-items: flex-start;
-  height: 3rem;
-  width: 100%;
-  margin-top: 1rem;
-}
 .main-board-page section h3 {
   text-align: start;
   width: 70%;

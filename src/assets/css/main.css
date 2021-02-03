@@ -96,6 +96,20 @@ a {
   border-radius: 0.6rem;
 }
 
+.message-container-center {
+  height: 3rem;
+  width: 100%;
+  margin-top: 1rem;
+  /* background-color: yellow; */
+}
+.message-container {
+  align-items: flex-start;
+  height: 3rem;
+  width: 100%;
+  margin-top: 1rem;
+  /* background-color: yellow; */
+}
+
 /* ---------------------- */
 /* HEADER */
 /* ---------------------- */

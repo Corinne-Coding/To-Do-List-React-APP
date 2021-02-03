@@ -80,6 +80,12 @@ export default App;
 
 /*
 
-A faire: rendre boutons non cliquables pendant requêtes
+A faire: 
+
+- rendre boutons non cliquables pendant requêtes
+
+- message "No board yet"
+
+- loader sur les boutons
 
 */

@@ -126,8 +126,7 @@
 /* ErrorMessage - COMPONENT */
 /* ---------------------- */
 .error-message {
-  height: 1.8rem;
-  align-items: flex-start;
+  height: 3rem;
   width: 20rem;
   color: var(--imperial-red);
   font-size: 0.8rem;

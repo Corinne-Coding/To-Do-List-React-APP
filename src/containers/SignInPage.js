@@ -8,6 +8,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
 import FormInputButton from "../components/FormInputButton";
 import RedirectButton from "../components/RedirectButton";
+import LoaderAnimation from "../components/LoaderAnimation";
 
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
@@ -15,11 +16,13 @@ const SignInPage = ({ handleToken }) => {
   const [email, setEmail] = useState("coco@coco");
   const [password, setPassword] = useState("pass");
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && password) {
       try {
+        setIsLoading(true);
         setError(null);
         const response = await axios.post("http://localhost:3000/signin", {
           email,
@@ -28,11 +31,13 @@ const SignInPage = ({ handleToken }) => {
         // console.log(response.data);
         if (response.data.token) {
           handleToken(response.data.token);
+          setIsLoading(false);
           history.push("/");
         } else {
           setError("randomError");
         }
       } catch (e) {
+        setIsLoading(false);
         if (e.response.data.error === "Unauthorized") {
           setError("incorrectCredentials");
         } else {
@@ -64,7 +69,13 @@ const SignInPage = ({ handleToken }) => {
             setFunction={setPassword}
           />
 
-          <ErrorMessage name={error} />
+          <div className="line-center message-container-center">
+            {isLoading ? (
+              <LoaderAnimation type="Circles" height="1.4rem" width="1.4rem" />
+            ) : (
+              <ErrorMessage name={error} />
+            )}
+          </div>
 
           <FormInputButton value="Submit" disabled={false} />
 

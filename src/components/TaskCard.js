@@ -39,8 +39,8 @@ const TaskCard = ({
       <Icon
         setHover={setHoverSelect}
         hover={hoverSelect}
-        icon1={Circle}
-        icon2={CheckCircle}
+        icon1={!done ? Circle : CheckCircle}
+        icon2={!done ? CheckCircle : Circle}
         iconName="circle icon"
         onClickFunction={() => {
           handleUpdateTask(taskId, !done, null);

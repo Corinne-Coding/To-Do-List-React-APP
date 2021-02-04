@@ -129,13 +129,13 @@ const BoardPage = ({ handleToken, userToken }) => {
             },
           }
         );
-        // console.log(response.data);
+
         if (response.data) {
-          setTasks(response.data);
+          setTimeout(() => {
+            setIsLoading(false);
+            setTasks(response.data);
+          }, 1000);
         }
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
       } catch (error) {
         alert("An error occurred");
       }

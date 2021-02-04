@@ -150,17 +150,25 @@
   margin-bottom: 2rem;
   border-radius: 0.2rem;
 }
-.form-input-button {
+.form-input-button,
+.form-input-button-disabled {
   width: 10rem;
   height: 2.6rem;
-  background-color: var(--capri);
-  color: var(--prussian-blue);
   font-size: 1.1rem;
   margin-bottom: 1rem;
+}
+.form-input-button {
+  background-color: var(--capri);
+  color: var(--prussian-blue);
 }
 .form-input-button:hover {
   background-color: var(--sapphire-blue);
   color: var(--capri);
+}
+.form-input-button-disabled {
+  background-color: var(--prussian-blue);
+  color: var(--capri);
+  cursor: not-allowed;
 }
 
 /* ---------------------- */

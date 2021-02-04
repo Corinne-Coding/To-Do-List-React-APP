@@ -94,6 +94,7 @@ a {
   cursor: pointer;
   outline: none;
   border-radius: 0.6rem;
+  border: none;
 }
 
 .message-container-center {

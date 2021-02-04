@@ -4,7 +4,6 @@ const errors = {
   emptyTask: "Your task can't be empty",
   existingEmail: "This email already exists",
   incorrectCredentials: "Incorrect credentials",
-  randomError: "Sorry, an error occurred",
   missingTitle: "Please, add a title",
   error: "An error occurred",
 };
@@ -18,8 +17,6 @@ const ErrorMessage = ({ name }) => {
         ? errors.emptyField
         : name === "existingEmail"
         ? errors.existingEmail
-        : name === "randomError"
-        ? errors.randomError
         : name === "incorrectCredentials"
         ? errors.incorrectCredentials
         : name === "missingTitle"

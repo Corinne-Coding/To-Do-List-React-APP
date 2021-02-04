@@ -13,35 +13,40 @@ import LoaderAnimation from "../components/LoaderAnimation";
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
 
-  const [email, setEmail] = useState("coco@coco");
-  const [password, setPassword] = useState("pass");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && password) {
       try {
         setIsLoading(true);
+        setIsDisabled(true);
         setError(null);
         const response = await axios.post("http://localhost:3000/signin", {
           email,
           password,
         });
-        // console.log(response.data);
+        setIsDisabled(false);
         if (response.data.token) {
-          handleToken(response.data.token);
-          setIsLoading(false);
-          history.push("/");
+          setTimeout(() => {
+            handleToken(response.data.token);
+            setIsLoading(false);
+            history.push("/");
+          }, 1000);
         } else {
-          setError("randomError");
+          setError("error");
         }
       } catch (e) {
         setIsLoading(false);
+        setIsDisabled(false);
         if (e.response.data.error === "Unauthorized") {
           setError("incorrectCredentials");
         } else {
-          setError("randomError");
+          setError("error");
         }
       }
     } else {
@@ -77,7 +82,7 @@ const SignInPage = ({ handleToken }) => {
             )}
           </div>
 
-          <FormInputButton value="Submit" disabled={false} />
+          <FormInputButton value="Submit" isDisabled={isDisabled} />
 
           <RedirectButton
             text="Create an account ? Sign up"

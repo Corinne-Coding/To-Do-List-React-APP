@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // Components
 import FormInput from "./FormInput";
 import FormInputButton from "./FormInputButton";
@@ -9,7 +11,6 @@ const Modal = ({
   handleFormSubmit,
   error,
   isLoadingBoard,
-  disabled,
   setDisplayModal,
   title,
   inputType,
@@ -28,7 +29,7 @@ const Modal = ({
         ></i>
         <h3>{title}</h3>
         <FormInput
-          type={inputType}
+          type="text"
           setFunction={setFunction}
           value={inputValue}
           placeholder={inputPlaceholder}
@@ -36,7 +37,7 @@ const Modal = ({
 
         <ErrorMessage name={error} />
 
-        <FormInputButton value={buttonText} disabled={disabled} />
+        <FormInputButton value={buttonText} isDisabled={isLoadingBoard} />
 
         {isLoadingBoard ? (
           <div className="empty-div line-center">

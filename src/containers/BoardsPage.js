@@ -19,26 +19,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
   const [displayUpdateBoardModal, setDisplayUpdateBoardModal] = useState(false);
   const [id, setId] = useState(null);
   const [titleToUpdate, setTitleToUpdate] = useState("");
-
-  // fetch data (user's boards) from API
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/boards", {
-        headers: {
-          Authorization: "Bearer " + userToken,
-        },
-      });
-      // console.log(response.data);
-      if (response.data) {
-        setBoards(response.data);
-      }
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    } catch (error) {
-      alert("An error occurred");
-    }
-  };
+  const [reload, setReload] = useState(false);
 
   // add board
   const handleAddBoardSubmit = async (event) => {
@@ -63,7 +44,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
             setIsLoadingBoard(false);
             setDisplayAddBoardModal(false);
             setTitle("");
-          }, 1500);
+          }, 1000);
         }
       } catch (e) {
         setIsLoadingBoard(false);
@@ -112,6 +93,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
   // remove board
   const handleRemoveBoard = async (id) => {
     try {
+      setReload(false);
       const response = await axios.delete(
         `http://localhost:3000/delete/board/${id}`,
         {
@@ -121,16 +103,38 @@ const BoardsPage = ({ handleToken, userToken }) => {
         }
       );
       if (response.data) {
-        fetchData();
+        setReload(true);
       }
     } catch (e) {
       setError(error);
+      setReload(true);
     }
   };
 
   useEffect(() => {
+    // fetch data (user's boards) from API
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/boards", {
+          headers: {
+            Authorization: "Bearer " + userToken,
+          },
+        });
+        if (response.data) {
+          setTimeout(() => {
+            setBoards(response.data);
+            setIsLoading(false);
+          }, 1000);
+        } else {
+          alert("An error occurred");
+        }
+      } catch (error) {
+        alert("An error occurred");
+      }
+    };
+
     fetchData();
-  }, [displayAddBoardModal, displayUpdateBoardModal]);
+  }, [displayAddBoardModal, displayUpdateBoardModal, reload, userToken]);
 
   return (
     <>
@@ -140,10 +144,8 @@ const BoardsPage = ({ handleToken, userToken }) => {
           handleFormSubmit={handleAddBoardSubmit}
           error={error}
           isLoadingBoard={isLoadingBoard}
-          disabled={isLoadingBoard ? true : false}
           setDisplayModal={setDisplayAddBoardModal}
           title="Add a board"
-          inputType="text"
           inputPlaceholder="title"
           buttonText="Create board"
         />
@@ -153,10 +155,8 @@ const BoardsPage = ({ handleToken, userToken }) => {
           handleFormSubmit={handleUpdateBoardSubmit}
           error={error}
           isLoadingBoard={isLoadingBoard}
-          disabled={isLoadingBoard ? true : false}
           setDisplayModal={setDisplayUpdateBoardModal}
           title="Update a board"
-          inputType="text"
           inputValue={titleToUpdate}
           buttonText="Update board"
         />
@@ -165,7 +165,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
       <Header handleToken={handleToken} displayDisconnectButton />
       {isLoading ? (
         <main className="line-center container">
-          <LoaderAnimation type="ThreeDots" height="10vh" width="10vw" />
+          <LoaderAnimation type="ThreeDots" height="6vh" width="6vw" />
         </main>
       ) : (
         <main className="column-center main-boards-page container">

@@ -8,6 +8,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
 import FormInputButton from "../components/FormInputButton";
 import RedirectButton from "../components/RedirectButton";
+import LoaderAnimation from "../components/LoaderAnimation";
 
 const SignUpPage = ({ handleToken }) => {
   let history = useHistory();
@@ -17,30 +18,38 @@ const SignUpPage = ({ handleToken }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && username && password && confirmPassword) {
       if (password === confirmPassword) {
         try {
+          setIsLoading(true);
           setError(null);
+          setIsDisabled(true);
           const response = await axios.post("http://localhost:3000/signup", {
             email,
             username,
             password,
           });
 
+          setIsDisabled(false);
           if (response.data.token) {
-            handleToken(response.data.token);
-            history.push("/");
+            setTimeout(() => {
+              handleToken(response.data.token);
+              history.push("/");
+            }, 1000);
           } else {
-            setError("randomError");
+            setError("error");
           }
         } catch (e) {
+          setIsDisabled(false);
           if (e.response.data.error === "This email already has an account.") {
             setError("existingEmail");
           } else {
-            setError("randomError");
+            setError("error");
           }
         }
       } else {
@@ -85,9 +94,15 @@ const SignUpPage = ({ handleToken }) => {
             setFunction={setConfirmPassword}
           />
 
-          <ErrorMessage name={error} />
+          <div className="line-center message-container-center">
+            {isLoading ? (
+              <LoaderAnimation type="Circles" height="1.4rem" width="1.4rem" />
+            ) : (
+              <ErrorMessage name={error} />
+            )}
+          </div>
 
-          <FormInputButton value="Submit" disabled={false} />
+          <FormInputButton value="Submit" isDisabled={isDisabled} />
 
           <RedirectButton
             text="Already have an account ? Sign in"

@@ -1,10 +1,12 @@
-const FormInputButton = ({ value, disabled }) => {
+const FormInputButton = ({ value, isDisabled }) => {
   return (
     <input
       type="submit"
       value={value}
-      className="btn form-input-button"
-      disabled={disabled}
+      className={
+        isDisabled ? "btn form-input-button-disabled" : "btn form-input-button"
+      }
+      disabled={isDisabled}
     />
   );
 };

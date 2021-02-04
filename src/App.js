@@ -86,6 +86,14 @@ A faire:
 
 - message "No board yet"
 
-- loader sur les boutons
+- loader pendant chargement
+
+- effet de mouvement sur les boards
+
+- cleaning : remove console.log + ordre alpha + ajout commentaires
+
+- + d'infos dans chaque board
+
+- détecter la touche entrée
 
 */

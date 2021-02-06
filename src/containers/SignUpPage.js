@@ -1,14 +1,14 @@
 import { useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 // Components
-import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
 import FormInputButton from "../components/FormInputButton";
-import RedirectButton from "../components/RedirectButton";
+import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
+import RedirectButton from "../components/RedirectButton";
 
 const SignUpPage = ({ handleToken }) => {
   let history = useHistory();
@@ -19,7 +19,6 @@ const SignUpPage = ({ handleToken }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -28,24 +27,29 @@ const SignUpPage = ({ handleToken }) => {
         try {
           setIsLoading(true);
           setError(null);
-          setIsDisabled(true);
+
+          // send data to server
           const response = await axios.post("http://localhost:3000/signup", {
             email,
             username,
             password,
           });
 
-          setIsDisabled(false);
+          // if response
           if (response.data.token) {
             setTimeout(() => {
+              setIsLoading(false);
               handleToken(response.data.token);
+              // redirect to boards page
               history.push("/");
             }, 1000);
           } else {
             setError("error");
           }
         } catch (e) {
-          setIsDisabled(false);
+          setIsLoading(false);
+
+          // email already exists in DB
           if (e.response.data.error === "This email already has an account.") {
             setError("existingEmail");
           } else {
@@ -53,9 +57,11 @@ const SignUpPage = ({ handleToken }) => {
           }
         }
       } else {
+        // passwords not identical
         setError("passwordsError");
       }
     } else {
+      // empty field(s)
       setError("emptyField");
     }
   };
@@ -102,7 +108,7 @@ const SignUpPage = ({ handleToken }) => {
             )}
           </div>
 
-          <FormInputButton value="Submit" isDisabled={isDisabled} />
+          <FormInputButton value="Submit" isDisabled={isLoading} />
 
           <RedirectButton
             text="Already have an account ? Sign in"

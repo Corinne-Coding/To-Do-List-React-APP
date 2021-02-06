@@ -1,14 +1,14 @@
 import { useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 // Components
-import Header from "../components/Header";
 import ErrorMessage from "../components/ErrorMessage";
 import FormInput from "../components/FormInput";
 import FormInputButton from "../components/FormInputButton";
-import RedirectButton from "../components/RedirectButton";
+import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
+import RedirectButton from "../components/RedirectButton";
 
 const SignInPage = ({ handleToken }) => {
   let history = useHistory();
@@ -17,24 +17,26 @@ const SignInPage = ({ handleToken }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && password) {
       try {
         setIsLoading(true);
-        setIsDisabled(true);
         setError(null);
+
+        // send data to server
         const response = await axios.post("http://localhost:3000/signin", {
           email,
           password,
         });
-        setIsDisabled(false);
+
+        // if response
         if (response.data.token) {
           setTimeout(() => {
-            handleToken(response.data.token);
             setIsLoading(false);
+            handleToken(response.data.token);
+            // redirect to boards page
             history.push("/");
           }, 1000);
         } else {
@@ -42,7 +44,8 @@ const SignInPage = ({ handleToken }) => {
         }
       } catch (e) {
         setIsLoading(false);
-        setIsDisabled(false);
+
+        // incorrect credentials
         if (e.response.data.error === "Unauthorized") {
           setError("incorrectCredentials");
         } else {
@@ -50,6 +53,7 @@ const SignInPage = ({ handleToken }) => {
         }
       }
     } else {
+      // empty field(s)
       setError("emptyField");
     }
   };
@@ -82,7 +86,7 @@ const SignInPage = ({ handleToken }) => {
             )}
           </div>
 
-          <FormInputButton value="Submit" isDisabled={isDisabled} />
+          <FormInputButton value="Submit" isDisabled={isLoading} />
 
           <RedirectButton
             text="Create an account ? Sign up"

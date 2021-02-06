@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-// Components
-import ConnectionButton from "../components/ConnectionButton";
-
 // Animation from https://animate.style/
 import "animate.css";
 
+// Components
+import ConnectionButton from "../components/ConnectionButton";
+
 const Home = () => {
   const [animated, setAnimated] = useState(false);
+
   return (
     <main className="main-home home-page column-center container">
       <div className="titles column-center">

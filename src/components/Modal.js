@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 // Components
 import FormInput from "./FormInput";
 import FormInputButton from "./FormInputButton";
@@ -13,7 +11,6 @@ const Modal = ({
   isLoadingBoard,
   setDisplayModal,
   title,
-  inputType,
   inputPlaceholder,
   inputValue,
   buttonText,

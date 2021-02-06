@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
 // Containers
+import BoardPage from "./containers/BoardPage";
+import BoardsPage from "./containers/BoardsPage";
+import HomePage from "./containers/HomePage";
 import SignInPage from "./containers/SignInPage";
 import SignUpPage from "./containers/SignUpPage";
-import BoardsPage from "./containers/BoardsPage";
-import BoardPage from "./containers/BoardPage";
-import HomePage from "./containers/HomePage";
 
 // Components
 import Footer from "./components/Footer";
@@ -20,7 +20,7 @@ const App = () => {
     fetchToken();
   }, []);
 
-  // get token from cookies
+  // function to get token from cookies
   const fetchToken = async () => {
     const token = await Cookies.get("token");
     if (token) {
@@ -31,7 +31,7 @@ const App = () => {
     setIsLoading(false);
   };
 
-  // save or remove token from cookies
+  // function to save or remove token from cookies
   const handleToken = async (token) => {
     if (token) {
       await Cookies.set("token", token);
@@ -84,16 +84,20 @@ A faire:
 
 - rendre boutons non cliquables pendant requêtes
 
-- message "No board yet"
-
 - loader pendant chargement
 
-- effet de mouvement sur les boards
+- message "No board yet"
 
-- cleaning : remove console.log + ordre alpha + ajout commentaires
+- afficher modal pour demander confirmation suppression board
 
 - + d'infos dans chaque board
 
 - détecter la touche entrée
+
+- afficher nom du user
+
+- effet de mouvement sur les boards
+
+- cleaning : remove console.log + ordre alpha + ajout commentaires
 
 */

@@ -1,8 +1,16 @@
-const Icon = ({ setHover, iconName, icon1, icon2, hover, onClickFunction }) => {
+const Icon = ({
+  setHover,
+  iconName,
+  icon1,
+  icon2,
+  hover,
+  onClickFunction,
+  isLoadingTask,
+}) => {
   return (
     <img
       onMouseEnter={() => {
-        setHover(true);
+        !isLoadingTask && setHover(true);
       }}
       onMouseLeave={() => {
         setHover(false);

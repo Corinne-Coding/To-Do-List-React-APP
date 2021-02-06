@@ -52,9 +52,14 @@
 }
 .add-btn-disabled {
   cursor: not-allowed;
-  background-color: var(--sapphire-blue);
   width: 8rem;
   height: 3rem;
+  color: var(--sapphire-blue);
+  background-color: var(--prussian-blue);
+}
+.add-btn-disabled:hover {
+  color: var(--sapphire-blue);
+  background-color: var(--prussian-blue);
 }
 
 /* ---------------------- */

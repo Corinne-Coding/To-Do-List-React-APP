@@ -82,21 +82,13 @@ export default App;
 
 A faire: 
 
-- rendre boutons non cliquables pendant requêtes
-
-- loader pendant chargement
-
 - message "No board yet"
-
-- afficher modal pour demander confirmation suppression board
 
 - + d'infos dans chaque board
 
-- détecter la touche entrée
-
 - afficher nom du user
 
-- effet de mouvement sur les boards
+- responsive
 
 - cleaning : remove console.log + ordre alpha + ajout commentaires
 

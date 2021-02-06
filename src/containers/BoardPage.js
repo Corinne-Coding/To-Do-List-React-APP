@@ -21,17 +21,16 @@ const BoardPage = ({ handleToken, userToken }) => {
   const [error, setError] = useState(null);
   const [boardId] = useState(history.location.state.boardId);
   const [isLoadingTask, setIsLoadingTask] = useState(false);
-  const [addTask, setAddTask] = useState(true);
   const [reload, setReload] = useState(false);
 
   // add task
   const handleAddTask = async () => {
-    setReload(false);
     if (newTask.length !== 0) {
       setError(null);
       try {
         setIsLoadingTask(true);
 
+        // send data to server
         const response = await axios.post(
           "http://localhost:3000/create/task",
           {
@@ -44,14 +43,11 @@ const BoardPage = ({ handleToken, userToken }) => {
             },
           }
         );
-        // console.log(response.data);
+
+        // if response
         if (response.data) {
-          setTimeout(() => {
-            setIsLoadingTask(false);
-            setNewTask("");
-            setAddTask(!setAddTask);
-            setReload(true);
-          }, 1000);
+          setIsLoadingTask(false);
+          setNewTask("");
         }
       } catch (e) {
         setIsLoadingTask(false);
@@ -64,15 +60,20 @@ const BoardPage = ({ handleToken, userToken }) => {
 
   // update task
   const handleUpdateTask = async (id, done, title) => {
+    console.log("UPDATE");
     try {
       if (id && (done === true || done === false || title)) {
-        setReload(false);
+        setIsLoadingTask(true);
+
+        // create object to send
         const obj = {};
         if (done === true || done === false) {
           obj.done = done;
         } else if (title) {
           obj.title = title;
         }
+
+        // send data to server
         const response = await axios.put(
           `http://localhost:3000/update/task/${id}`,
           obj,
@@ -82,14 +83,17 @@ const BoardPage = ({ handleToken, userToken }) => {
             },
           }
         );
-        console.log(response.data);
-        setReload(true);
+
+        // if response
+        if (response.data) {
+          setIsLoadingTask(false);
+        }
       } else {
         return;
       }
     } catch (e) {
+      setIsLoadingTask(false);
       alert("An error occurred");
-      setReload(true);
     }
   };
 
@@ -97,7 +101,9 @@ const BoardPage = ({ handleToken, userToken }) => {
   const handleDeleteTask = async (id) => {
     try {
       if (id) {
-        setReload(false);
+        setIsLoadingTask(true);
+
+        // send request
         const response = await axios.delete(
           `http://localhost:3000/delete/task/${id}`,
           {
@@ -106,22 +112,25 @@ const BoardPage = ({ handleToken, userToken }) => {
             },
           }
         );
-        console.log(response.data);
-        setReload(true);
+
+        // if response
+        if (response.data) {
+          setIsLoadingTask(false);
+        }
       } else {
         return;
       }
     } catch (e) {
       alert("An error occurred");
-      setReload(true);
+      setIsLoadingTask(false);
     }
   };
 
   useEffect(() => {
     // fetch data (tasks) from API
-
     const fetchData = async () => {
       try {
+        // request
         const response = await axios.get(
           `http://localhost:3000/tasks/${boardId}`,
           {
@@ -131,11 +140,10 @@ const BoardPage = ({ handleToken, userToken }) => {
           }
         );
 
+        // if response
         if (response.data) {
-          setTimeout(() => {
-            setTasks(response.data);
-            setIsLoading(false);
-          }, 1000);
+          setTasks(response.data);
+          setIsLoading(false);
         }
       } catch (error) {
         setIsLoading(false);
@@ -144,7 +152,7 @@ const BoardPage = ({ handleToken, userToken }) => {
     };
 
     fetchData();
-  }, [addTask, reload, boardId, userToken]);
+  }, [isLoadingTask, boardId, userToken]);
 
   return (
     <>
@@ -199,6 +207,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                     done={task.done}
                     handleUpdateTask={handleUpdateTask}
                     handleDeleteTask={handleDeleteTask}
+                    isLoadingTask={isLoadingTask}
                   />
                 );
               })}
@@ -218,6 +227,7 @@ const BoardPage = ({ handleToken, userToken }) => {
                     done={task.done}
                     handleUpdateTask={handleUpdateTask}
                     handleDeleteTask={handleDeleteTask}
+                    isLoadingTask={isLoadingTask}
                   />
                 );
               })}

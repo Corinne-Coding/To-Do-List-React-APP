@@ -21,6 +21,7 @@ const TaskCard = ({
   done,
   handleUpdateTask,
   handleDeleteTask,
+  isLoadingTask,
 }) => {
   const [hoverSelect, setHoverSelect] = useState(false);
   const [hoverTrash, setHoverTrash] = useState(false);
@@ -41,9 +42,10 @@ const TaskCard = ({
         hover={hoverSelect}
         icon1={!done ? Circle : CheckCircle}
         icon2={!done ? CheckCircle : Circle}
+        isLoadingTask={isLoadingTask}
         iconName="circle icon"
         onClickFunction={() => {
-          handleUpdateTask(taskId, !done, null);
+          !isLoadingTask && handleUpdateTask(taskId, !done, null);
         }}
       />
 
@@ -62,9 +64,12 @@ const TaskCard = ({
               icon1={CheckDark}
               icon2={CheckLight}
               iconName="check icon"
+              isLoadingTask={isLoadingTask}
               onClickFunction={() => {
-                handleUpdateTask(taskId, null, text);
-                setEdit(false);
+                if (!isLoadingTask) {
+                  handleUpdateTask(taskId, null, text);
+                  setEdit(false);
+                }
               }}
             />
             <Icon
@@ -73,9 +78,12 @@ const TaskCard = ({
               icon1={CancelDark}
               icon2={CancelLight}
               iconName="cancel icon"
+              isLoadingTask={isLoadingTask}
               onClickFunction={() => {
-                setEdit(false);
-                setHoverCancel(false);
+                if (!isLoadingTask) {
+                  setEdit(false);
+                  setHoverCancel(false);
+                }
               }}
             />
           </div>
@@ -97,8 +105,9 @@ const TaskCard = ({
           icon1={PencilLight}
           icon2={PencilDark}
           iconName="pencil icon"
+          isLoadingTask={isLoadingTask}
           onClickFunction={() => {
-            setEdit(true);
+            !isLoadingTask && setEdit(true);
           }}
         />
         <Icon
@@ -107,8 +116,9 @@ const TaskCard = ({
           icon1={Trash}
           icon2={OpenTrash}
           iconName="trash icon"
+          isLoadingTask={isLoadingTask}
           onClickFunction={() => {
-            handleDeleteTask(taskId);
+            !isLoadingTask && handleDeleteTask(taskId);
           }}
         />
       </div>

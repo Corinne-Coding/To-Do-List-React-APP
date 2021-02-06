@@ -179,7 +179,11 @@ const BoardPage = ({ handleToken, userToken }) => {
                 )}
               </div>
             </div>
-            <AddButton text="Add task" setFunction={handleAddTask} />
+            <AddButton
+              text="Add task"
+              setFunction={handleAddTask}
+              isDisabled={isLoadingTask}
+            />
           </div>
 
           <section className="column-center">

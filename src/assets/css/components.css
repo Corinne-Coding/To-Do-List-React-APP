@@ -48,6 +48,13 @@
 .add-btn {
   padding: 0.8rem 1rem;
   width: 8rem;
+  height: 3rem;
+}
+.add-btn-disabled {
+  cursor: not-allowed;
+  background-color: var(--sapphire-blue);
+  width: 8rem;
+  height: 3rem;
 }
 
 /* ---------------------- */

@@ -95,6 +95,7 @@ a {
   outline: none;
   border-radius: 0.6rem;
   border: none;
+  font-family: inherit;
 }
 
 .message-container-center {

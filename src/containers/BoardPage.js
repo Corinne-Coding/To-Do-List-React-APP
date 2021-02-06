@@ -119,6 +119,7 @@ const BoardPage = ({ handleToken, userToken }) => {
 
   useEffect(() => {
     // fetch data (tasks) from API
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -132,11 +133,12 @@ const BoardPage = ({ handleToken, userToken }) => {
 
         if (response.data) {
           setTimeout(() => {
-            setIsLoading(false);
             setTasks(response.data);
+            setIsLoading(false);
           }, 1000);
         }
       } catch (error) {
+        setIsLoading(false);
         alert("An error occurred");
       }
     };

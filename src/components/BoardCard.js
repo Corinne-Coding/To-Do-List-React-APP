@@ -5,10 +5,10 @@ import { useHistory } from "react-router-dom";
 
 const BoardCard = ({
   boardInfos,
-  handleRemoveBoard,
-  setDisplayModal,
-  setId,
+  setDisplayUpdateBoardModal,
+  setDisplayDeleteBoardModal,
   setTitleToUpdate,
+  setBoardInfos,
 }) => {
   const history = useHistory();
 
@@ -32,8 +32,8 @@ const BoardCard = ({
           className="fas fa-edit"
           onClick={(e) => {
             if (e.target.className === "fas fa-edit") {
-              setDisplayModal(true);
-              setId(boardInfos._id);
+              setDisplayUpdateBoardModal(true);
+              setBoardInfos(boardInfos);
               setTitleToUpdate(boardInfos.title);
             }
           }}
@@ -43,7 +43,8 @@ const BoardCard = ({
           className="fas fa-trash-alt"
           onClick={(e) => {
             if (e.target.className === "fas fa-trash-alt") {
-              handleRemoveBoard(boardInfos._id);
+              setBoardInfos(boardInfos);
+              setDisplayDeleteBoardModal(true);
             }
           }}
         ></i>

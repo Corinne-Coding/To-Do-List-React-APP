@@ -104,6 +104,13 @@
 }
 
 /* ---------------------- */
+/* ConfirmButton - COMPONENT */
+/* ---------------------- */
+.confirm-btn {
+  padding: 0.4rem 0.4rem;
+}
+
+/* ---------------------- */
 /* DisconnectionButton - COMPONENT */
 /* ---------------------- */
 .disconnect-btn {
@@ -212,6 +219,9 @@
 .modal .fa-times:hover {
   color: var(--alice-blue);
   cursor: pointer;
+}
+.modal form > p {
+  color: var(--imperial-red);
 }
 
 /* ---------------------- */

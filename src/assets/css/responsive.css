@@ -9,13 +9,6 @@
   }
 }
 
-/* 320px */
-@media (max-width: 320px) {
-  html {
-    font-size: 12px;
-  }
-}
-
 /* 567px */
 @media (max-width: 567px) {
   .hidden-567 {
@@ -23,6 +16,13 @@
   }
   br {
     display: flex;
+  }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  html {
+    font-size: 12px;
   }
 }
 
@@ -71,10 +71,7 @@
 /* 768px */
 @media (max-width: 768px) {
   .home-page .titles {
-    font-size: 2.6rem;
-  }
-  .home-page .titles > p:first-child {
-    margin-bottom: 6rem;
+    font-size: 2.4rem;
   }
   .home-page .titles > p:last-child {
     font-size: 1.6rem;
@@ -87,7 +84,33 @@
 /* 576px */
 @media (max-width: 576px) {
   .home-page .titles {
-    font-size: 2.4rem;
+    font-size: 2rem;
+  }
+  .home-page .titles > p:first-child {
+    line-height: 3rem;
+    margin-bottom: 4rem;
+  }
+  .home-page .titles > p:last-child {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  .home-page .buttons-line {
+    width: 60%;
+  }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  .home-page .titles {
+    font-size: 1.8rem;
+  }
+  .home-page .titles > p:first-child {
+    line-height: 3rem;
+    margin-bottom: 3rem;
+  }
+  .home-page .titles > p:last-child {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
   .home-page .buttons-line {
     width: 70%;
@@ -97,17 +120,42 @@
 /* ---------------------- */
 /* ALL BUTTONS */
 /* ---------------------- */
+
+/* 1024px */
 @media (max-width: 1024px) {
   .styled-btn {
     padding: 1rem 1rem;
   }
 }
 
+/* 768px */
+@media (max-width: 768px) {
+  .styled-btn {
+    padding: 0.8rem 0.8rem;
+  }
+}
+
 /* ---------------------- */
 /* ConnectionButton - COMPONENT */
 /* ---------------------- */
+
+/* 1024px */
 @media (max-width: 1024px) {
   .connection-button {
     font-size: 1.2rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .connection-button {
+    font-size: 1rem;
+  }
+}
+
+/* 567px */
+@media (max-width: 567px) {
+  .connection-button {
+    font-size: 0.8rem;
   }
 }

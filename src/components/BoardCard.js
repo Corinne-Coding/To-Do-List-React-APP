@@ -77,14 +77,38 @@ const BoardCard = ({
       <p className="board-card-date">{displayDate(boardInfos.date)}</p>
 
       <div className="line-center board-card-list">
-        <div className="column-center">
-          <p>Tasks to do</p>
-          <p> {taskCounter("todo")}</p>
-        </div>
+        <div className="column-start">
+          <p>
+            {taskCounter("todo")}&nbsp;
+            {taskCounter("todo") === 0 || taskCounter("todo") === 1
+              ? "task"
+              : "tasks"}
+            &nbsp;to do
+          </p>
 
-        <div className="column-center">
-          <p>Tasks done</p>
-          <p> {taskCounter("done")}</p>
+          <ul>
+            {boardInfos.tasksId.map((task) => {
+              if (!task.done) return <li>{task.title}</li>;
+            })}
+          </ul>
+        </div>
+      </div>
+
+      <div className="line-center board-card-list">
+        <div className="column-start">
+          <p>
+            {taskCounter("done")}&nbsp;
+            {taskCounter("done") === 0 || taskCounter("done") === 1
+              ? "task"
+              : "tasks"}
+            &nbsp;done
+          </p>
+
+          <ul>
+            {boardInfos.tasksId.map((task) => {
+              if (task.done) return <li>{task.title}</li>;
+            })}
+          </ul>
         </div>
       </div>
     </div>

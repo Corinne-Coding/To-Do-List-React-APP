@@ -154,7 +154,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
     };
 
     fetchData();
-  }, [isLoadingTask, boardId, userToken]);
+  }, [isLoadingTask, boardId, userToken, history]);
 
   return (
     <>

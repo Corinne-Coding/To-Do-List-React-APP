@@ -90,6 +90,13 @@ a {
   align-items: center;
 }
 
+.column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .btn {
   cursor: pointer;
   outline: none;

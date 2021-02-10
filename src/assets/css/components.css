@@ -69,8 +69,8 @@
   justify-content: flex-start;
   border: solid var(--sapphire-blue) 0.2rem;
   padding: 1rem;
-  margin: 2rem 1rem 0 1rem;
-  width: calc(100% / 3 - 2rem);
+  margin: 2rem 1.2rem 0 1.2rem;
+  width: calc(100% / 3 - 2.4rem);
 }
 .board-card h3 {
   text-align: center;
@@ -78,6 +78,7 @@
 .board-card:hover {
   border: solid var(--capri) 0.2rem;
   background-color: var(--prussian-blue);
+  transform: scale(1.1, 1.1);
 }
 .board-card:hover .fa-trash-alt,
 .board-card:hover .fa-edit {
@@ -107,7 +108,7 @@
   color: var(--alice-blue);
 }
 .board-card-date {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   width: 100%;
 }
 .board-card-date > p:first-child {
@@ -115,6 +116,25 @@
   margin-bottom: 0.5rem;
   font-style: italic;
   font-size: 0.9rem;
+}
+.board-card-list {
+  width: 100%;
+  margin-top: 2rem;
+}
+.board-card-list > div {
+  width: 50%;
+}
+.board-card-list > div:first-child {
+  border-right: var(--grey) solid 2px;
+}
+.board-card-list > div > p:first-child {
+  color: var(--grey);
+  margin-bottom: 0.4rem;
+}
+.board-card-list > div > p:last-child {
+  color: var(--sapphire-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* ---------------------- */

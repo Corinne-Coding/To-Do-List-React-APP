@@ -72,6 +72,9 @@
   margin: 2rem 1rem 0 1rem;
   width: calc(100% / 3 - 2rem);
 }
+.board-card h3 {
+  text-align: center;
+}
 .board-card:hover {
   border: solid var(--capri) 0.2rem;
   background-color: var(--prussian-blue);
@@ -102,6 +105,16 @@
 .board-card .fa-trash-alt:hover,
 .board-card .fa-edit:hover {
   color: var(--alice-blue);
+}
+.board-card-date {
+  margin-top: 2rem;
+  width: 100%;
+}
+.board-card-date > p:first-child {
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 /* ---------------------- */
@@ -134,10 +147,11 @@
 /* ---------------------- */
 /* EmptyLine - COMPONENT */
 /* ---------------------- */
-.empty-line {
+.empty-line,
+.empty-line-mg {
   color: var(--grey);
   text-align: start;
-  width: 70%;
+  width: 100%;
   font-style: italic;
 }
 
@@ -261,7 +275,7 @@
 /* ---------------------- */
 .task-card {
   height: 3rem;
-  width: 70%;
+  width: 100%;
   border-bottom: var(--grey) solid 0.1rem;
   justify-content: space-between;
   margin-bottom: 1rem;

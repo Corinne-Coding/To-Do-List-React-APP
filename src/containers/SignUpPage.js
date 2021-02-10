@@ -10,7 +10,7 @@ import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
 import RedirectButton from "../components/RedirectButton";
 
-const SignUpPage = ({ handleToken }) => {
+const SignUpPage = ({ handleTokenAndName }) => {
   let history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ const SignUpPage = ({ handleToken }) => {
           if (response.data.token) {
             setTimeout(() => {
               setIsLoading(false);
-              handleToken(response.data.token);
+              handleTokenAndName(response.data.token, response.data.username);
               // redirect to boards page
               history.push("/");
             }, 1000);

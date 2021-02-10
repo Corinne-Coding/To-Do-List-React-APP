@@ -102,14 +102,16 @@ a {
   height: 3rem;
   width: 100%;
   margin-top: 1rem;
-  /* background-color: yellow; */
 }
 .message-container {
   align-items: flex-start;
   height: 3rem;
   width: 100%;
   margin-top: 1rem;
-  /* background-color: yellow; */
+}
+
+.mg-top {
+  margin-top: 3rem;
 }
 
 /* ---------------------- */
@@ -130,10 +132,16 @@ a {
   height: 3.2rem;
   margin-right: 0.5rem;
 }
+.name {
+  margin: 0 1.5rem 0.6rem 0;
+  font-weight: 600;
+}
 .date {
   margin-right: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  color: var(--grey);
+  font-style: italic;
 }
 
 /* ---------------------- */
@@ -141,7 +149,6 @@ a {
 /* ---------------------- */
 main {
   min-height: calc(100vh - 10rem);
-  /* background-color: pink; */
 }
 .main-home {
   min-height: calc(100vh - 5rem);
@@ -149,12 +156,6 @@ main {
 .main-boards-page {
   justify-content: flex-start;
   padding-top: 1rem;
-}
-.boards-card-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
 }
 
 /* ---------------------- */

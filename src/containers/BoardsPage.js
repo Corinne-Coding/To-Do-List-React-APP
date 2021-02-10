@@ -7,8 +7,9 @@ import BoardCard from "../components/BoardCard";
 import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
 import Modal from "../components/Modal.js";
+import EmptyLine from "../components/EmptyLine";
 
-const BoardsPage = ({ handleToken, userToken }) => {
+const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
   // States
   const [boards, setBoards] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -142,6 +143,7 @@ const BoardsPage = ({ handleToken, userToken }) => {
           },
         });
 
+        // console.log(response.data);
         // if response
         if (response.data) {
           setBoards(response.data);
@@ -196,7 +198,11 @@ const BoardsPage = ({ handleToken, userToken }) => {
         />
       ) : null}
 
-      <Header handleToken={handleToken} displayDisconnectButton />
+      <Header
+        handleTokenAndName={handleTokenAndName}
+        displayDisconnectButton
+        userName={userName}
+      />
 
       {isLoading ? (
         // loading data from API
@@ -211,21 +217,26 @@ const BoardsPage = ({ handleToken, userToken }) => {
             text="Add a board"
           />
 
-          {/* boards */}
-          <div className="boards-card-container">
-            {boards.map((board, index) => {
-              return (
-                <BoardCard
-                  key={index}
-                  boardInfos={board}
-                  setDisplayUpdateBoardModal={setDisplayUpdateBoardModal}
-                  setDisplayDeleteBoardModal={setDisplayDeleteBoardModal}
-                  setBoardInfos={setBoardInfos}
-                  setTitleToUpdate={setTitleToUpdate}
-                />
-              );
-            })}
-          </div>
+          {boards.length === 0 ? (
+            <div className="mg-top">
+              <EmptyLine text="No board yet" centered={true} />
+            </div>
+          ) : (
+            <div className="boards-card-container">
+              {boards.map((board, index) => {
+                return (
+                  <BoardCard
+                    key={index}
+                    boardInfos={board}
+                    setDisplayUpdateBoardModal={setDisplayUpdateBoardModal}
+                    setDisplayDeleteBoardModal={setDisplayDeleteBoardModal}
+                    setBoardInfos={setBoardInfos}
+                    setTitleToUpdate={setTitleToUpdate}
+                  />
+                );
+              })}
+            </div>
+          )}
         </main>
       )}
     </>

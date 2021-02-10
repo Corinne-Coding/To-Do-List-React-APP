@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./assets/css/main.css";
 import "./assets/css/containers.css";
 import "./assets/css/components.css";
+import "./assets/css/responsive.css";
 import App from "./App";
 
 ReactDOM.render(

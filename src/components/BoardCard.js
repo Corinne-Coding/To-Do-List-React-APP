@@ -1,7 +1,10 @@
+import { useHistory } from "react-router-dom";
+
 // Components
 import CardTitle from "../components/CardTitle";
 
-import { useHistory } from "react-router-dom";
+// Functions
+import displayDate from "../assets/functions/displayDate";
 
 const BoardCard = ({
   boardInfos,
@@ -48,6 +51,12 @@ const BoardCard = ({
             }
           }}
         ></i>
+      </div>
+
+      <div className="column-center board-card-date">
+        <p>Board created on</p>
+
+        <p>{displayDate(boardInfos.date)}</p>
       </div>
     </div>
   );

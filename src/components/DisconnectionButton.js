@@ -1,11 +1,11 @@
 import { useHistory } from "react-router-dom";
 
-const DisconnectionButton = ({ handleToken }) => {
+const DisconnectionButton = ({ handleTokenAndName }) => {
   const history = useHistory();
   return (
     <div
       onClick={() => {
-        const bool = handleToken();
+        const bool = handleTokenAndName();
         if (bool) {
           history.push("/");
         }

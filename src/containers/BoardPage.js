@@ -12,16 +12,15 @@ import CardTitle from "../components/CardTitle";
 import TaskCard from "../components/TaskCard";
 import EmptyLine from "../components/EmptyLine";
 
-const BoardPage = ({ handleToken, userToken }) => {
+const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
   const history = useHistory();
 
   const [tasks, setTasks] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [newTask, setNewTask] = useState("");
   const [error, setError] = useState(null);
-  const [boardId] = useState(history.location.state.boardId);
+  const [boardId] = useState(history.location.state?.boardId);
   const [isLoadingTask, setIsLoadingTask] = useState(false);
-  const [reload, setReload] = useState(false);
 
   // add task
   const handleAddTask = async () => {
@@ -60,7 +59,6 @@ const BoardPage = ({ handleToken, userToken }) => {
 
   // update task
   const handleUpdateTask = async (id, done, title) => {
-    console.log("UPDATE");
     try {
       if (id && (done === true || done === false || title)) {
         setIsLoadingTask(true);
@@ -130,20 +128,24 @@ const BoardPage = ({ handleToken, userToken }) => {
     // fetch data (tasks) from API
     const fetchData = async () => {
       try {
-        // request
-        const response = await axios.get(
-          `http://localhost:3000/tasks/${boardId}`,
-          {
-            headers: {
-              Authorization: "Bearer " + userToken,
-            },
-          }
-        );
+        if (boardId) {
+          // request
+          const response = await axios.get(
+            `http://localhost:3000/tasks/${boardId}`,
+            {
+              headers: {
+                Authorization: "Bearer " + userToken,
+              },
+            }
+          );
 
-        // if response
-        if (response.data) {
-          setTasks(response.data);
-          setIsLoading(false);
+          // if response
+          if (response.data) {
+            setTasks(response.data);
+            setIsLoading(false);
+          }
+        } else {
+          history.push("/");
         }
       } catch (error) {
         setIsLoading(false);
@@ -156,7 +158,11 @@ const BoardPage = ({ handleToken, userToken }) => {
 
   return (
     <>
-      <Header handleToken={handleToken} displayDisconnectButton />
+      <Header
+        handleTokenAndName={handleTokenAndName}
+        displayDisconnectButton
+        userName={userName}
+      />
 
       {isLoading ? (
         <main className="line-center container">
@@ -194,45 +200,49 @@ const BoardPage = ({ handleToken, userToken }) => {
             />
           </div>
 
-          <section className="column-center">
-            <CardTitle title="To do" />
+          <div className="column-center">
+            <section className="column-center">
+              <CardTitle title="To do" />
 
-            {tasks.todo.length > 0 &&
-              tasks.todo.map((task) => {
-                return (
-                  <TaskCard
-                    key={task._id}
-                    title={task.title}
-                    taskId={task._id}
-                    done={task.done}
-                    handleUpdateTask={handleUpdateTask}
-                    handleDeleteTask={handleDeleteTask}
-                    isLoadingTask={isLoadingTask}
-                  />
-                );
-              })}
+              {tasks.todo.length > 0 &&
+                tasks.todo.map((task) => {
+                  return (
+                    <TaskCard
+                      key={task._id}
+                      title={task.title}
+                      taskId={task._id}
+                      done={task.done}
+                      handleUpdateTask={handleUpdateTask}
+                      handleDeleteTask={handleDeleteTask}
+                      isLoadingTask={isLoadingTask}
+                    />
+                  );
+                })}
 
-            {tasks.todo.length === 0 && <EmptyLine text="No task to do yet" />}
-          </section>
+              {tasks.todo.length === 0 && (
+                <EmptyLine text="No task to do yet" />
+              )}
+            </section>
 
-          <section className="column-center">
-            <CardTitle title="Done" />
-            {tasks.done.length > 0 &&
-              tasks.done.map((task) => {
-                return (
-                  <TaskCard
-                    key={task._id}
-                    title={task.title}
-                    taskId={task._id}
-                    done={task.done}
-                    handleUpdateTask={handleUpdateTask}
-                    handleDeleteTask={handleDeleteTask}
-                    isLoadingTask={isLoadingTask}
-                  />
-                );
-              })}
-            {tasks.done.length === 0 && <EmptyLine text="No task done yet" />}
-          </section>
+            <section className="column-center">
+              <CardTitle title="Done" />
+              {tasks.done.length > 0 &&
+                tasks.done.map((task) => {
+                  return (
+                    <TaskCard
+                      key={task._id}
+                      title={task.title}
+                      taskId={task._id}
+                      done={task.done}
+                      handleUpdateTask={handleUpdateTask}
+                      handleDeleteTask={handleDeleteTask}
+                      isLoadingTask={isLoadingTask}
+                    />
+                  );
+                })}
+              {tasks.done.length === 0 && <EmptyLine text="No task done yet" />}
+            </section>
+          </div>
         </main>
       )}
     </>

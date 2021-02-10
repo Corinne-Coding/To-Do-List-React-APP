@@ -10,8 +10,8 @@ import list from "../assets/icons/list.svg";
 // Functions
 import displayDate from "../assets/functions/displayDate";
 
-const Header = ({ handleToken, displayDisconnectButton }) => {
-  const [date] = useState(displayDate());
+const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
+  const [date] = useState(displayDate(new Date()));
 
   return (
     <div className="header">
@@ -19,12 +19,13 @@ const Header = ({ handleToken, displayDisconnectButton }) => {
         <RedirectButton styled="icon" icon={list} page="/" />
 
         <div className="line-center">
-          <div className="line-center">
+          <div className="column-center">
+            <p className="name">{userName}</p>
             <p className="date">{date}</p>
           </div>
 
           {displayDisconnectButton && (
-            <DisconnectionButton handleToken={handleToken} />
+            <DisconnectionButton handleTokenAndName={handleTokenAndName} />
           )}
         </div>
       </div>

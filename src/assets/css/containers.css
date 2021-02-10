@@ -27,6 +27,7 @@
 .home-page .titles > p:first-child {
   padding: 2rem;
   margin-bottom: 6rem;
+  text-align: center;
 }
 .home-page .titles > p:first-child:hover {
   color: var(--capri);
@@ -35,10 +36,21 @@
 .home-page .titles > p:last-child {
   margin-bottom: 4rem;
   font-size: 2rem;
+  text-align: center;
 }
 .home-page .buttons-line {
   width: 40%;
   justify-content: space-between;
+}
+
+/* ---------------------- */
+/* BoardsPage */
+/* ---------------------- */
+.boards-card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* ---------------------- */
@@ -74,11 +86,14 @@
   color: var(--rich-blue-black);
   height: 3rem;
 }
-.main-board-page section h3 {
+.main-board-page > div > section h3 {
   text-align: start;
-  width: 70%;
+  width: 100%;
   margin-bottom: 1rem;
 }
-.main-board-page section:nth-child(4) {
+.main-board-page div > section:nth-child(1) {
   margin-bottom: 3rem;
+}
+.main-board-page section {
+  width: 70%;
 }

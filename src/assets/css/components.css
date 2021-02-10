@@ -109,13 +109,11 @@
 }
 .board-card-date {
   margin-top: 1.6rem;
+  text-align: center;
   width: 100%;
-}
-.board-card-date > p:first-child {
-  color: var(--grey);
+  color: var(--alice-blue);
   margin-bottom: 0.5rem;
-  font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .board-card-list {
   width: 100%;

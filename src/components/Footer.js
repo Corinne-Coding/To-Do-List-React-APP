@@ -8,16 +8,24 @@ const Footer = () => {
   return (
     <footer className="column-center">
       <div className="line-center">
-        <p>To-do List Project made with</p>
-        <img src={ReactImg} alt="react icon" />
-        <p>by Corinne - 2020</p>
-        <AnimatedIcon name="github" link="https://github.com/Corinne-Coding" />
-        <AnimatedIcon
-          name="linkedin"
-          link="https://www.linkedin.com/in/corinne-pradier-6610201b2/"
-        />
+        <div className="line-center">
+          <p>To-do List Project made with</p>
+          <img src={ReactImg} alt="react icon" />
+          <p>by Corinne - 2020</p>
+        </div>
+
+        <div className="line-center">
+          <AnimatedIcon
+            name="github"
+            link="https://github.com/Corinne-Coding"
+          />
+          <AnimatedIcon
+            name="linkedin"
+            link="https://www.linkedin.com/in/corinne-pradier-6610201b2/"
+          />
+        </div>
       </div>
-      <div>
+      <div className="hidden-567">
         <p>
           <span>Icon made by&nbsp;</span>
 

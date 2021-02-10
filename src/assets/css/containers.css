@@ -28,6 +28,7 @@
   padding: 2rem;
   margin-bottom: 6rem;
   text-align: center;
+  line-height: 4rem;
 }
 .home-page .titles > p:first-child:hover {
   color: var(--capri);
@@ -37,6 +38,7 @@
   margin-bottom: 4rem;
   font-size: 2rem;
   text-align: center;
+  line-height: 2.4rem;
 }
 .home-page .buttons-line {
   width: 40%;

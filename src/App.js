@@ -98,7 +98,7 @@ export default App;
 
 A faire: 
 
-- + d'infos dans chaque board : tps passé depuis création + nb de tasks done / todo
+- envoi sms
 
 - responsive
 

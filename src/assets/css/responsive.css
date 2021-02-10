@@ -1,22 +1,43 @@
 /* ---------------------- */
-/* HEADER */
+/* COMMON RULES */
 /* ---------------------- */
 
-@media (max-width: 1200px) {
+/* 1024px */
+@media (max-width: 1024px) {
   html {
     font-size: 14px;
   }
 }
 
-@media (max-width: 1024px) {
+/* 320px */
+@media (max-width: 320px) {
   html {
     font-size: 12px;
   }
 }
 
-@media (max-width: 320px) {
-  html {
-    font-size: 10px;
+/* 567px */
+@media (max-width: 567px) {
+  .hidden-567 {
+    display: none;
+  }
+  br {
+    display: flex;
+  }
+}
+
+/* ---------------------- */
+/* HEADER */
+/* ---------------------- */
+
+/* ---------------------- */
+/* FOOTER */
+/* ---------------------- */
+
+/* 567px */
+@media (max-width: 567px) {
+  footer > div:first-child {
+    flex-direction: column;
   }
 }
 
@@ -24,6 +45,17 @@
 /* HomePage */
 /* ---------------------- */
 
+/* 1200px */
+@media (max-width: 1200px) {
+  .home-page .titles {
+    font-size: 3.5rem;
+  }
+  .home-page .titles > p:first-child {
+    padding: 0rem;
+  }
+}
+
+/* 1024px */
 @media (max-width: 1024px) {
   .home-page .titles {
     font-size: 3.2rem;
@@ -31,27 +63,37 @@
   .home-page .titles > p:first-child {
     padding: 0rem;
   }
+  .home-page .titles > p:last-child {
+    font-size: 1.8rem;
+  }
 }
+
+/* 768px */
 @media (max-width: 768px) {
   .home-page .titles {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
   .home-page .titles > p:first-child {
-    margin-bottom: 10rem;
-  }
-  .home-page .titles > p:last-child {
-    margin-bottom: 8rem;
-  }
-}
-@media (max-width: 576px) {
-  .home-page .titles {
-    font-size: 2.4rem;
+    margin-bottom: 6rem;
   }
   .home-page .titles > p:last-child {
     font-size: 1.6rem;
   }
   .home-page .buttons-line {
-    width: 60%;
+    width: 50%;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .home-page .titles {
+    font-size: 2.4rem;
+  }
+  .home-page .titles > p:last-child {
+    /* font-size: 1.6rem; */
+  }
+  .home-page .buttons-line {
+    width: 70%;
   }
 }
 

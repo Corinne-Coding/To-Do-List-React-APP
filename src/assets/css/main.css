@@ -114,6 +114,10 @@ a {
   margin-top: 3rem;
 }
 
+br {
+  display: none;
+}
+
 /* ---------------------- */
 /* HEADER */
 /* ---------------------- */
@@ -165,11 +169,11 @@ footer {
   height: 5rem;
   background-color: var(--rich-black);
 }
-footer > div:first-child > p {
+footer > div:first-child > div > p {
   color: var(--capri);
   font-size: 0.9rem;
 }
-footer > div:first-child > p:nth-child(3) {
+footer > div:first-child > div > p:nth-child(3) {
   margin-right: 0.4rem;
 }
 footer > div:last-child {

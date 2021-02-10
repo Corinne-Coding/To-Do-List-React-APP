@@ -74,11 +74,7 @@ const BoardCard = ({
         ></i>
       </div>
 
-      <div className="column-center board-card-date">
-        <p>Board created on</p>
-
-        <p>{displayDate(boardInfos.date)}</p>
-      </div>
+      <p className="board-card-date">{displayDate(boardInfos.date)}</p>
 
       <div className="line-center board-card-list">
         <div className="column-center">

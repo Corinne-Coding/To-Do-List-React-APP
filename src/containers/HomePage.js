@@ -21,9 +21,14 @@ const Home = () => {
           }}
           className={animated ? "animate__animated animate__pulse" : undefined}
         >
-          Welcome on the To-do List Project
+          Welcome on the <br />
+          To-do List <br />
+          Project
         </p>
-        <p>Sign in or sign up to start the experience</p>
+        <p>
+          Sign in or sign up <br />
+          to start the experience
+        </p>
       </div>
       <div className="buttons-line line-center">
         <ConnectionButton page="/signin" text="Sign in" />

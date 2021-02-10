@@ -75,6 +75,8 @@
 }
 .board-card h3 {
   text-align: center;
+  margin: 0 1rem;
+  word-break: break-word;
 }
 .board-card:hover {
   border: solid var(--capri) 0.2rem;

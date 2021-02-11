@@ -25,7 +25,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="hidden-567">
+      <div className="hidden-576">
         <p>
           <span>Icon made by&nbsp;</span>
 

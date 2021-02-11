@@ -11,14 +11,20 @@
 
 /* 768px */
 @media (max-width: 768px) {
+  .hidden-768 {
+    display: none;
+  }
+  .display-768 {
+    display: flex;
+  }
   h1 {
     font-size: 1.4rem;
   }
 }
 
-/* 567px */
-@media (max-width: 567px) {
-  .hidden-567 {
+/* 576px */
+@media (max-width: 576px) {
+  .hidden-576 {
     display: none;
   }
   br {
@@ -53,8 +59,8 @@
   }
 }
 
-/* 567px */
-@media (max-width: 567px) {
+/* 576px */
+@media (max-width: 576px) {
   .header .icon {
     height: 2.2rem;
   }
@@ -74,8 +80,8 @@
 /* FOOTER */
 /* ---------------------- */
 
-/* 567px */
-@media (max-width: 567px) {
+/* 576px */
+@media (max-width: 576px) {
   footer > div:first-child {
     flex-direction: column;
   }
@@ -161,24 +167,6 @@
 }
 
 /* ---------------------- */
-/* ALL BUTTONS */
-/* ---------------------- */
-
-/* 1024px */
-/* @media (max-width: 1024px) {
-  .styled-btn {
-    padding: 1rem 1rem;
-  }
-} */
-
-/* 768px */
-/* @media (max-width: 768px) {
-  .styled-btn {
-    padding: 0.8rem 0.8rem;
-  }
-} */
-
-/* ---------------------- */
 /* ConnectionButton - COMPONENT */
 /* ---------------------- */
 
@@ -196,9 +184,64 @@
   }
 }
 
-/* 567px */
-@media (max-width: 567px) {
+/* 576px */
+@media (max-width: 576px) {
   .connection-button {
     font-size: 0.8rem;
+  }
+}
+
+/* ---------------------- */
+/* DisconnectionButton - COMPONENT */
+/* ---------------------- */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .disconnect-btn {
+    font-size: 1rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .disconnect-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .disconnect-btn {
+    font-size: 0.6rem;
+  }
+}
+
+/* ---------------------- */
+/* BoardCard - COMPONENT */
+/* ---------------------- */
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .board-card {
+    width: calc(100% / 2 - 2.4rem);
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .board-card {
+    margin: 1rem 0.6rem 1rem 0.6rem;
+    width: calc(100% / 2 - 1.2rem);
+  }
+  .board-card:hover {
+    transform: scale(1, 1.1);
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .board-card {
+    width: 100%;
+    margin: 1rem 0 1rem 0;
   }
 }

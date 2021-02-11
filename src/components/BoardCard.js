@@ -15,8 +15,6 @@ const BoardCard = ({
 }) => {
   const history = useHistory();
 
-  console.log(boardInfos);
-
   const taskCounter = (info) => {
     let toDoCounter = 0;
     let doneCounter = 0;

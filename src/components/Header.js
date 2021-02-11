@@ -21,7 +21,9 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
         <div className="line-center">
           <div className="column-center">
             <p className="name">{userName}</p>
-            <p className="date">{date}</p>
+            <p className={!displayDisconnectButton ? "date" : "date mg-r"}>
+              {date}
+            </p>
           </div>
 
           {displayDisconnectButton && (

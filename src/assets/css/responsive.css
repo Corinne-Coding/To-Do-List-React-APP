@@ -27,6 +27,9 @@
   h1 {
     font-size: 1rem;
   }
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 /* 320px */
@@ -162,18 +165,18 @@
 /* ---------------------- */
 
 /* 1024px */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .styled-btn {
     padding: 1rem 1rem;
   }
-}
+} */
 
 /* 768px */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .styled-btn {
     padding: 0.8rem 0.8rem;
   }
-}
+} */
 
 /* ---------------------- */
 /* ConnectionButton - COMPONENT */

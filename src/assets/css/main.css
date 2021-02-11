@@ -148,11 +148,13 @@ br {
   font-weight: 600;
 }
 .date {
-  margin-right: 1.5rem;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--grey);
   font-style: italic;
+}
+.mg-r {
+  margin-right: 1.5rem;
 }
 
 /* ---------------------- */

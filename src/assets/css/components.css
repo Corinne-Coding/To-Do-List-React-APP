@@ -282,11 +282,12 @@
 .redirect-bordered-btn {
   padding: 0.8rem;
   background-color: var(--prussian-blue);
-  position: absolute;
-  top: 1rem;
+  position: sticky;
+  top: 14vh;
+  width: 5rem;
 }
 .redirect-bordered-btn i {
-  margin-right: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 /* ---------------------- */

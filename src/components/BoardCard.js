@@ -87,7 +87,7 @@ const BoardCard = ({
           <ul>
             {boardInfos.tasksId.map((task) => {
               if (!task.done) {
-                return <li>{task.title}</li>;
+                return <li key={task._id}>{task.title}</li>;
               } else {
                 return null;
               }
@@ -109,7 +109,7 @@ const BoardCard = ({
           <ul>
             {boardInfos.tasksId.map((task) => {
               if (task.done) {
-                return <li>{task.title}</li>;
+                return <li key={task._id}>{task.title}</li>;
               } else {
                 return null;
               }

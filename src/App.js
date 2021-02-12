@@ -98,10 +98,12 @@ export default App;
 
 A faire: 
 
-- envoi sms
-
 - responsive
 
+- envoi sms
+
 - cleaning : remove console.log + ordre alpha + ajout commentaires
+
+- deploy heroku
 
 */

@@ -167,6 +167,26 @@
 }
 
 /* ---------------------- */
+/* AddButton - COMPONENT */
+/* ---------------------- */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .add-btn {
+    padding: 0.8rem 0.8rem;
+    width: 7rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .add-btn {
+    padding: 0.6rem 0.6rem;
+    width: 6rem;
+  }
+}
+
+/* ---------------------- */
 /* ConnectionButton - COMPONENT */
 /* ---------------------- */
 
@@ -243,5 +263,84 @@
   .board-card {
     width: 100%;
     margin: 1rem 0 1rem 0;
+  }
+}
+
+/* ---------------------- */
+/* BoardPage */
+/* ---------------------- */
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .main-board-page > h2 {
+    margin: 0 13rem;
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .main-board-page > h2 {
+    margin: 0 10rem;
+  }
+  .top-part .input-container {
+    width: 70%;
+    margin-right: 1rem;
+  }
+  .main-board-page section {
+    width: 80%;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .main-board-page > h2 {
+    margin: 0 7rem;
+  }
+  .main-board-page section {
+    width: 90%;
+  }
+}
+
+/* ---------------------- */
+/* Modal - COMPONENT */
+/* ---------------------- */
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .modal form {
+    width: 50%;
+  }
+  .form-input {
+    width: 23rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .modal form {
+    width: 60%;
+  }
+  .form-input {
+    width: 20rem;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .modal form {
+    width: 80%;
+  }
+  .form-input {
+    width: 16rem;
+  }
+}
+
+/* 320px */
+@media (max-width: 320px) {
+  .modal form {
+    width: 90%;
+  }
+  .form-input {
+    width: 15rem;
   }
 }

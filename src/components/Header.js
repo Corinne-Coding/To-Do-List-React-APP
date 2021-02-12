@@ -38,11 +38,11 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
           </p>
         </div>
 
-        <div className="column-center display-768">
-          {displayDisconnectButton && (
+        {displayDisconnectButton && (
+          <div className="column-center display-768">
             <DisconnectionButton handleTokenAndName={handleTokenAndName} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

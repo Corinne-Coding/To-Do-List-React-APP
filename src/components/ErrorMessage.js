@@ -1,3 +1,4 @@
+// Errors list
 const errors = {
   passwordsError: "Your passwords must be the same",
   emptyField: "Please, fill all the fields",

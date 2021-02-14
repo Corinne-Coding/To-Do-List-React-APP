@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 // Components
 import AddButton from "../components/AddButton";
-import Header from "../components/Header";
-import RedirectButton from "../components/RedirectButton";
-import ErrorMessage from "../components/ErrorMessage";
-import LoaderAnimation from "../components/LoaderAnimation";
 import CardTitle from "../components/CardTitle";
-import TaskCard from "../components/TaskCard";
 import EmptyLine from "../components/EmptyLine";
+import ErrorMessage from "../components/ErrorMessage";
+import Header from "../components/Header";
+import LoaderAnimation from "../components/LoaderAnimation";
+import RedirectButton from "../components/RedirectButton";
+import TaskCard from "../components/TaskCard";
 
 const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
   const history = useHistory();
 
+  // states
   const [tasks, setTasks] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [newTask, setNewTask] = useState("");
@@ -22,7 +23,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
   const [boardId] = useState(history.location.state?.boardId);
   const [isLoadingTask, setIsLoadingTask] = useState(false);
 
-  // add task
+  // function to add task
   const handleAddTask = async () => {
     if (newTask.length !== 0) {
       setError(null);
@@ -31,7 +32,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.post(
-          "https://to-do-list-express-api.herokuapp.com/task",
+          "https://to-do-list-express-api.herokuapp.com/create/task",
           {
             title: newTask,
             boardId,
@@ -57,7 +58,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
     }
   };
 
-  // update task
+  // function to update task
   const handleUpdateTask = async (id, done, title) => {
     try {
       if (id && (done === true || done === false || title)) {
@@ -73,7 +74,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.put(
-          `https://to-do-list-express-api.herokuapp.com/task/${id}`,
+          `https://to-do-list-express-api.herokuapp.com/update/task/${id}`,
           obj,
           {
             headers: {
@@ -95,7 +96,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
     }
   };
 
-  // delete task
+  // function to delete task
   const handleDeleteTask = async (id) => {
     try {
       if (id) {
@@ -103,7 +104,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send request
         const response = await axios.delete(
-          `https://to-do-list-express-api.herokuapp.com/${id}`,
+          `https://to-do-list-express-api.herokuapp.com/delete/task/${id}`,
           {
             headers: {
               Authorization: "Bearer " + userToken,
@@ -125,13 +126,13 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
   };
 
   useEffect(() => {
-    // fetch data (tasks) from API
+    // function to fetch data (tasks) from API
     const fetchData = async () => {
       try {
         if (boardId) {
           // request
           const response = await axios.get(
-            `https://to-do-list-express-api.herokuapp.com/${boardId}`,
+            `https://to-do-list-express-api.herokuapp.com/tasks/${boardId}`,
             {
               headers: {
                 Authorization: "Bearer " + userToken,
@@ -165,15 +166,18 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
       />
 
       {isLoading ? (
+        // loading data from API
         <main className="line-center container">
           <LoaderAnimation type="Circles" height="10vh" width="10vw" />
         </main>
       ) : (
+        // data loaded
         <main className="container main-board-page">
           <RedirectButton styled="bordered" page="/" />
 
           <h2>{history.location.state.boardTitle}</h2>
 
+          {/* Input & add task button */}
           <div className="line-center top-part">
             <div className="input-container column-center">
               <input
@@ -200,7 +204,9 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
             />
           </div>
 
+          {/* All tasks */}
           <div className="column-center">
+            {/* To do tasks */}
             <section className="column-center">
               <CardTitle title="To do" />
 
@@ -224,6 +230,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
               )}
             </section>
 
+            {/* Done tasks */}
             <section className="column-center">
               <CardTitle title="Done" />
               {tasks.done.length > 0 &&

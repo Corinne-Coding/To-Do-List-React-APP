@@ -15,6 +15,7 @@ const BoardCard = ({
 }) => {
   const history = useHistory();
 
+  // function to calculate number of tasks todo or done
   const taskCounter = (info) => {
     let toDoCounter = 0;
     let doneCounter = 0;
@@ -49,6 +50,7 @@ const BoardCard = ({
         }
       }}
     >
+      {/* Edit icon & title & trash icon */}
       <div className="line-center up">
         <i
           className="fas fa-edit"
@@ -72,8 +74,10 @@ const BoardCard = ({
         ></i>
       </div>
 
+      {/* Date */}
       <p className="board-card-date">{displayDate(boardInfos.date)}</p>
 
+      {/* To do tasks */}
       <div className="line-center board-card-list">
         <div className="column-start">
           <p>
@@ -96,6 +100,7 @@ const BoardCard = ({
         </div>
       </div>
 
+      {/* Done tasks */}
       <div className="line-center board-card-list">
         <div className="column-start">
           <p>

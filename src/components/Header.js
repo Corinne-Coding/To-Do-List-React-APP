@@ -18,6 +18,7 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
       <div className="container">
         <RedirectButton styled="icon" icon={list} page="/" />
 
+        {/* Date & disconnection button */}
         <div className="line-center hidden-768">
           <div className="column-center">
             <p className="name">{userName}</p>
@@ -31,6 +32,7 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
           )}
         </div>
 
+        {/* Date */}
         <div className="column-center display-768">
           <p className="name">{userName}</p>
           <p className={!displayDisconnectButton ? "date" : "date mg-r"}>
@@ -38,6 +40,7 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
           </p>
         </div>
 
+        {/* Disconnection button */}
         {displayDisconnectButton && (
           <div className="column-center display-768">
             <DisconnectionButton handleTokenAndName={handleTokenAndName} />

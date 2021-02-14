@@ -7,6 +7,7 @@ import ReactImg from "../assets/img/react.png";
 const Footer = () => {
   return (
     <footer className="column-center">
+      {/* My informations */}
       <div className="line-center">
         <div className="line-center">
           <p>To-do List Project made with</p>
@@ -25,6 +26,8 @@ const Footer = () => {
           />
         </div>
       </div>
+
+      {/* Icons references */}
       <div className="hidden-576">
         <p>
           <span>Icon made by&nbsp;</span>

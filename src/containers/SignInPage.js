@@ -13,11 +13,13 @@ import RedirectButton from "../components/RedirectButton";
 const SignInPage = ({ handleTokenAndName }) => {
   let history = useHistory();
 
+  // states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // function to sign in
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (email && password) {
@@ -66,6 +68,7 @@ const SignInPage = ({ handleTokenAndName }) => {
       <Header displayDisconnectButton={false} />
       <main className="column-center container">
         <h2>Sign in</h2>
+
         <form className="column-center" onSubmit={handleFormSubmit}>
           <FormInput
             placeholder="email"
@@ -81,6 +84,7 @@ const SignInPage = ({ handleTokenAndName }) => {
             setFunction={setPassword}
           />
 
+          {/* Display error or loader */}
           <div className="line-center message-container-center">
             {isLoading ? (
               <LoaderAnimation type="Circles" height="1.4rem" width="1.4rem" />

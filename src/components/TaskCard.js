@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-// Icons
-import Circle from "../assets/icons/circle.svg";
-import CheckCircle from "../assets/icons/check-circle.svg";
-import Trash from "../assets/icons/trash.svg";
-import OpenTrash from "../assets/icons/open-trash.svg";
-import PencilLight from "../assets/icons/pencil-light.svg";
-import PencilDark from "../assets/icons/pencil-dark.svg";
-import CheckLight from "../assets/icons/check-light.svg";
-import CheckDark from "../assets/icons/check-dark.svg";
-import CancelLight from "../assets/icons/cancel-light.svg";
-import CancelDark from "../assets/icons/cancel-dark.svg";
-
 // Components
 import Icon from "../components/Icon";
+
+// Icons
+import CancelDark from "../assets/icons/cancel-dark.svg";
+import CancelLight from "../assets/icons/cancel-light.svg";
+import CheckCircle from "../assets/icons/check-circle.svg";
+import CheckDark from "../assets/icons/check-dark.svg";
+import CheckLight from "../assets/icons/check-light.svg";
+import Circle from "../assets/icons/circle.svg";
+import OpenTrash from "../assets/icons/open-trash.svg";
+import PencilDark from "../assets/icons/pencil-dark.svg";
+import PencilLight from "../assets/icons/pencil-light.svg";
+import Trash from "../assets/icons/trash.svg";
 
 const TaskCard = ({
   title,
@@ -23,6 +23,7 @@ const TaskCard = ({
   handleDeleteTask,
   isLoadingTask,
 }) => {
+  // states
   const [hoverSelect, setHoverSelect] = useState(false);
   const [hoverTrash, setHoverTrash] = useState(false);
   const [hoverEdit, setHoverEdit] = useState(false);
@@ -31,12 +32,14 @@ const TaskCard = ({
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(title);
 
+  // function to change input value
   const handleInputChange = (event) => {
     setText(event.target.value);
   };
 
   return (
     <div className="task-card line-center">
+      {/* Select icon */}
       <Icon
         setHover={setHoverSelect}
         hover={hoverSelect}
@@ -49,6 +52,7 @@ const TaskCard = ({
         }}
       />
 
+      {/* Input & validate icon & cancel icon */}
       <div className="input-container">
         {edit ? (
           <div className="line-center">
@@ -98,6 +102,7 @@ const TaskCard = ({
         )}
       </div>
 
+      {/* Edit & trash icons */}
       <div className="line-center">
         <Icon
           setHover={setHoverEdit}

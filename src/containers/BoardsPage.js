@@ -4,13 +4,13 @@ import axios from "axios";
 // Components
 import AddButton from "../components/AddButton";
 import BoardCard from "../components/BoardCard";
+import EmptyLine from "../components/EmptyLine";
 import Header from "../components/Header";
 import LoaderAnimation from "../components/LoaderAnimation";
 import Modal from "../components/Modal.js";
-import EmptyLine from "../components/EmptyLine";
 
 const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
-  // States
+  // states
   const [boards, setBoards] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingBoard, setIsLoadingBoard] = useState(false);
@@ -33,7 +33,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.post(
-          "https://to-do-list-express-api.herokuapp.com/board",
+          "https://to-do-list-express-api.herokuapp.com/create/board",
           {
             title,
           },
@@ -73,7 +73,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.put(
-          `https://to-do-list-express-api.herokuapp.com/${boardInfos._id}`,
+          `https://to-do-list-express-api.herokuapp.com/update/board/${boardInfos._id}`,
           {
             title: titleToUpdate,
           },
@@ -111,7 +111,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
       // send request
       const response = await axios.delete(
-        `https://to-do-list-express-api.herokuapp.com/${boardInfos._id}`,
+        `https://to-do-list-express-api.herokuapp.com/delete/board/${boardInfos._id}`,
         {
           headers: {
             Authorization: "Bearer " + userToken,
@@ -146,7 +146,6 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
           }
         );
 
-        // console.log(response.data);
         // if response
         if (response.data) {
           setBoards(response.data);

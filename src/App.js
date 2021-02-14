@@ -13,6 +13,7 @@ import SignInPage from "./containers/SignInPage";
 import SignUpPage from "./containers/SignUpPage";
 
 const App = () => {
+  // states
   const [userToken, setUserToken] = useState(null);
   const [userName, setUserName] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -93,15 +94,3 @@ const App = () => {
 };
 
 export default App;
-
-/*
-
-A faire: 
-
-- changer BDD
-
-- cleaning : remove console.log + ordre alpha + ajout commentaires
-
-
-
-*/

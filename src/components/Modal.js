@@ -17,7 +17,7 @@ const Modal = ({
   return (
     <div className="modal line-center">
       <form className="column-center" onSubmit={handleFormSubmit}>
-        {/*  cross icon to close modal */}
+        {/*  Cross icon to close modal */}
         <i
           className="fas fa-times"
           onClick={() => {
@@ -61,6 +61,7 @@ const Modal = ({
           isDisabled={isLoadingBoard}
         />
 
+        {/* Loader  */}
         {isLoadingBoard ? (
           <div className="empty-div line-center">
             <LoaderAnimation type="Oval" height="2rem" width="2rem" />

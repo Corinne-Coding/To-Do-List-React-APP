@@ -13,6 +13,7 @@ import RedirectButton from "../components/RedirectButton";
 const SignUpPage = ({ handleTokenAndName }) => {
   let history = useHistory();
 
+  // states
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,18 +21,15 @@ const SignUpPage = ({ handleTokenAndName }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // function to sign up
   const handleFormSubmit = async (event) => {
-    console.log("00");
     event.preventDefault();
     if (email && username && password && confirmPassword) {
-      console.log("01");
       if (password === confirmPassword) {
-        console.log("02");
         try {
           setIsLoading(true);
           setError(null);
 
-          console.log("03");
           // send data to server
           const response = await axios.post(
             "https://to-do-list-express-api.herokuapp.com/signup",
@@ -41,11 +39,6 @@ const SignUpPage = ({ handleTokenAndName }) => {
               password,
             }
           );
-
-          console.log("https://to-do-list-express-api.herokuapp.com/signup");
-
-          console.log(response);
-          console.log(response.data);
 
           // if response
           if (response.data.token) {
@@ -83,6 +76,7 @@ const SignUpPage = ({ handleTokenAndName }) => {
       <Header displayDisconnectButton={false} />
       <main className="column-center container">
         <h2>Sign up</h2>
+
         <form className="column-center" onSubmit={handleFormSubmit}>
           <FormInput
             placeholder="email"
@@ -112,6 +106,7 @@ const SignUpPage = ({ handleTokenAndName }) => {
             setFunction={setConfirmPassword}
           />
 
+          {/* Display error or loader */}
           <div className="line-center message-container-center">
             {isLoading ? (
               <LoaderAnimation type="Circles" height="1.4rem" width="1.4rem" />

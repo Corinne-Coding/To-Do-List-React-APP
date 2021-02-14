@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <main className="main-home home-page column-center container">
       <div className="titles column-center">
+        {/* Main title */}
         <p
           onMouseEnter={() => {
             setAnimated(true);
@@ -25,11 +26,15 @@ const Home = () => {
           To-do List <br />
           Project
         </p>
+
+        {/* Subtitle */}
         <p>
           Sign in or sign up <br />
           to start the experience
         </p>
       </div>
+
+      {/* Connection buttons */}
       <div className="buttons-line line-center">
         <ConnectionButton page="/signin" text="Sign in" />
         <ConnectionButton page="/signup" text="Sign up" />

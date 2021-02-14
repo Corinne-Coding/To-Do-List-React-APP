@@ -33,7 +33,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.post(
-          "http://localhost:3000/create/board",
+          "https://to-do-list-express-api.herokuapp.com/board",
           {
             title,
           },
@@ -73,7 +73,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.put(
-          `http://localhost:3000/update/board/${boardInfos._id}`,
+          `https://to-do-list-express-api.herokuapp.com/${boardInfos._id}`,
           {
             title: titleToUpdate,
           },
@@ -111,7 +111,7 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
 
       // send request
       const response = await axios.delete(
-        `http://localhost:3000/delete/board/${boardInfos._id}`,
+        `https://to-do-list-express-api.herokuapp.com/${boardInfos._id}`,
         {
           headers: {
             Authorization: "Bearer " + userToken,
@@ -137,11 +137,14 @@ const BoardsPage = ({ handleTokenAndName, userToken, userName }) => {
     // function to fetch data (boards) from API
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/boards", {
-          headers: {
-            Authorization: "Bearer " + userToken,
-          },
-        });
+        const response = await axios.get(
+          "https://to-do-list-express-api.herokuapp.com/boards",
+          {
+            headers: {
+              Authorization: "Bearer " + userToken,
+            },
+          }
+        );
 
         // console.log(response.data);
         // if response

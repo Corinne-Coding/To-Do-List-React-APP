@@ -26,10 +26,13 @@ const SignInPage = ({ handleTokenAndName }) => {
         setError(null);
 
         // send data to server
-        const response = await axios.post("http://localhost:3000/signin", {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          "https://to-do-list-express-api.herokuapp.com/signin",
+          {
+            email,
+            password,
+          }
+        );
 
         // if response
         if (response.data.token) {

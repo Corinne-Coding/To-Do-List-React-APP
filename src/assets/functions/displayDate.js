@@ -1,3 +1,5 @@
+// Function to display date
+
 const displayDate = (date) => {
   if (date) {
     const dateNow = Date.parse(date);

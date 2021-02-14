@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
+// Components
+import Footer from "./components/Footer";
+
 // Containers
 import BoardPage from "./containers/BoardPage";
 import BoardsPage from "./containers/BoardsPage";
 import HomePage from "./containers/HomePage";
 import SignInPage from "./containers/SignInPage";
 import SignUpPage from "./containers/SignUpPage";
-
-// Components
-import Footer from "./components/Footer";
 
 const App = () => {
   const [userToken, setUserToken] = useState(null);
@@ -66,8 +66,8 @@ const App = () => {
           {userToken ? (
             <BoardPage
               handleTokenAndName={handleTokenAndName}
-              userToken={userToken}
               userName={userName}
+              userToken={userToken}
             />
           ) : (
             <HomePage />
@@ -78,8 +78,8 @@ const App = () => {
           {userToken && !isLoading ? (
             <BoardsPage
               handleTokenAndName={handleTokenAndName}
-              userToken={userToken}
               userName={userName}
+              userToken={userToken}
             />
           ) : (
             <HomePage />
@@ -98,12 +98,10 @@ export default App;
 
 A faire: 
 
-- responsive
-
-- envoi sms
+- changer BDD
 
 - cleaning : remove console.log + ordre alpha + ajout commentaires
 
-- deploy heroku
+
 
 */

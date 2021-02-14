@@ -31,7 +31,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.post(
-          "http://localhost:3000/create/task",
+          "https://to-do-list-express-api.herokuapp.com/task",
           {
             title: newTask,
             boardId,
@@ -73,7 +73,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send data to server
         const response = await axios.put(
-          `http://localhost:3000/update/task/${id}`,
+          `https://to-do-list-express-api.herokuapp.com/task/${id}`,
           obj,
           {
             headers: {
@@ -103,7 +103,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
 
         // send request
         const response = await axios.delete(
-          `http://localhost:3000/delete/task/${id}`,
+          `https://to-do-list-express-api.herokuapp.com/${id}`,
           {
             headers: {
               Authorization: "Bearer " + userToken,
@@ -131,7 +131,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
         if (boardId) {
           // request
           const response = await axios.get(
-            `http://localhost:3000/tasks/${boardId}`,
+            `https://to-do-list-express-api.herokuapp.com/${boardId}`,
             {
               headers: {
                 Authorization: "Bearer " + userToken,

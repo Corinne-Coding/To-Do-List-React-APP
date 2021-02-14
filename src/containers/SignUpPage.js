@@ -21,13 +21,17 @@ const SignUpPage = ({ handleTokenAndName }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async (event) => {
+    console.log("00");
     event.preventDefault();
     if (email && username && password && confirmPassword) {
+      console.log("01");
       if (password === confirmPassword) {
+        console.log("02");
         try {
           setIsLoading(true);
           setError(null);
 
+          console.log("03");
           // send data to server
           const response = await axios.post(
             "https://to-do-list-express-api.herokuapp.com/signup",
@@ -37,6 +41,11 @@ const SignUpPage = ({ handleTokenAndName }) => {
               password,
             }
           );
+
+          console.log("https://to-do-list-express-api.herokuapp.com/signup");
+
+          console.log(response);
+          console.log(response.data);
 
           // if response
           if (response.data.token) {

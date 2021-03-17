@@ -22,7 +22,7 @@ Follow this link to try my project : https://to-do-list-corinne.netlify.app/
 
 User can choose to to sign in page or to sign up page.
 
-<img width="500" src="" alt="screenshot-01" />
+<img width="500" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
 
 <br />
 <br />

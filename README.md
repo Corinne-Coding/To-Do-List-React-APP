@@ -62,6 +62,8 @@ Before to complete sign up, all fields must be filled, email must be unique in D
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-02.png" alt="screenshot-02" />
 </p>
 
+When a new account is created, I receive a SMS with the username and the email used for registration.
+
 <br />
 
 ### Boards page

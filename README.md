@@ -20,9 +20,9 @@ Follow this link to try my project : https://to-do-list-corinne.netlify.app/
 
 ### Home page
 
-User can choose to to sign in page or to sign up page.
+User can choose to go sign in page or to sign up page.
 
-<img width="500" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
+<img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
 
 <br />
 <br />
@@ -31,7 +31,7 @@ User can choose to to sign in page or to sign up page.
 
 Before to be logged in, all fields must be filled and credentials must be correct.
 
-<img width="500" src="" alt="screenshot-02" />
+<img width="800" align="center" src="" alt="screenshot-02" />
 
 <br />
 <br />
@@ -40,7 +40,7 @@ Before to be logged in, all fields must be filled and credentials must be correc
 
 Before to complete sign up, all fields must be filled, email must be unique in DB, and passwords must be the same.
 
-<img width="500" src="" alt="screenshot-03" />
+<img width="800" src="" alt="screenshot-03" />
 
 <br />
 <br />
@@ -50,13 +50,13 @@ Before to complete sign up, all fields must be filled, email must be unique in D
 On this page, the user can modify a board's title or delete a board.
 If a board is selected, the user to go to single board page.
 
-<img width="500" src="" alt="screenshot-04" />
+<img width="800" src="" alt="screenshot-04" />
 
 <br />
 
 The user can also add a new board. A modal opens to write a board title.
 
-<img width="500" src="" alt="screenshot-05" />
+<img width="800" src="" alt="screenshot-05" />
 
 <br />
 <br />
@@ -65,4 +65,4 @@ The user can also add a new board. A modal opens to write a board title.
 
 On this page, the user can add a task, modify a task's title, choose a task status ("done" ou "to do"), and delete a task.
 
-<img width="500" src="" alt="screenshot-06" />
+<img width="800" src="" alt="screenshot-06" />

@@ -18,7 +18,10 @@ Follow this link to try my project : <a href="https://to-do-list-corinne.netlify
 
 The To-do List Project is a **fullstack** project made in early 2021.
 
-If you want to take a look on the backend project (Node.js server), follow this link : <a href="https://github.com/Corinne-Coding/To-do-List-express-API" target="_blank">https://github.com/Corinne-Coding/To-do-List-express-API</a>
+If you want to take a look on the backend project (Node.js server), follow this link :  
+<a href="https://github.com/Corinne-Coding/To-do-List-express-API" target="_blank">https://github.com/Corinne-Coding/To-do-List-express-API</a>
+
+<br />
 
 **Packages & libraries used :**
 
@@ -95,14 +98,14 @@ On this page, the user can add a task, modify a task title, choose a task status
 
 You will need `node` and `yarn` or `npm` installed globally on your machine.
 
-- Clone this repository :
+Clone this repository :
 
 ```bash
 git clone https://github.com/Corinne-Coding/To-Do-List-React-APP.git
 cd To-Do-List-React-APP
 ```
 
-- Install packages with `yarn` or `npm` :
+Install packages with `yarn` or `npm` :
 
 ```bash
 yarn

@@ -10,7 +10,7 @@ A to-do list web application built with **React**.
 
 ## Demo
 
-Follow this [link](https://to-do-list-corinne.netlify.app/){:target="\_blank"} to try my project.
+Follow this link to try my project : <a href="https://to-do-list-corinne.netlify.app/">https://to-do-list-corinne.netlify.app/</a>
 
 <br />
 
@@ -18,7 +18,7 @@ Follow this [link](https://to-do-list-corinne.netlify.app/){:target="\_blank"} t
 
 The To-do List Project is a **fullstack** project made in early 2021.
 
-If you want to take a look on the backend project (Node.js server), follow this link : [To-do List Project 📝](https://github.com/Corinne-Coding/To-do-List-express-API){:target="\_blank"}.
+If you want to take a look on the backend project (Node.js server), follow this link : [To-do-List express API](https://github.com/Corinne-Coding/To-do-List-express-API)
 
 <br />
 

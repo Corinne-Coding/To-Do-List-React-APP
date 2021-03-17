@@ -1,6 +1,8 @@
 <h1 align="center">To-do List Project</h1>
 
-<img width="300" alt="To-do List Project" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project.gif" />
+<p align="center">
+<img width="800" alt="To-do List Project" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project.gif" />
+</p>
 
 <br />
 

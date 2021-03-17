@@ -14,7 +14,23 @@ Follow this link to try my project : <a href="https://to-do-list-corinne.netlify
 
 <br />
 
-## Overview
+## About this project
+
+The To-do List Project is a **fullstack** project made in early 2021.
+
+If you want to take a look on the backend project (Node.js server), follow this link : <a href="https://github.com/Corinne-Coding/To-do-List-express-API" target="_blank">https://github.com/Corinne-Coding/To-do-List-express-API</a>
+
+**Packages & libraries used :**
+
+- [axios](https://www.npmjs.com/package/axios)
+- [js-cookie](https://www.npmjs.com/package/js-cookie)
+- [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner)
+- [react-useanimations](https://www.npmjs.com/package/react-useanimations)
+- [animate.css](https://animate.style/)
+
+<br />
+
+## Screenshots
 
 ### Home page
 
@@ -65,10 +81,47 @@ The user can also add a new board. A modal opens to write a board title :
 
 <br />
 
-### Single board page
+### Tasks page
 
 On this page, the user can add a task, modify a task title, choose a task status ("done" or "to do"), and delete a task :
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-06.png" alt="screenshot-06" />
 </p>
+
+<br />
+
+## Install and run project
+
+You will need `node` and `yarn` or `npm` installed globally on your machine.
+
+- Clone this repository :
+
+```bash
+git clone https://github.com/Corinne-Coding/To-Do-List-React-APP.git
+cd To-Do-List-React-APP
+```
+
+- Install packages with `yarn` or `npm` :
+
+```bash
+yarn
+```
+
+or
+
+```bash
+npm install
+```
+
+When installation is complete, run the project :
+
+```bash
+yarn start
+```
+
+or
+
+```bash
+npm start
+```

@@ -11,7 +11,7 @@ const errors = {
 
 const ErrorMessage = ({ name }) => {
   return (
-    <div className=" line-center error-message">
+    <div className="line-center error-message">
       {name === "passwordsError"
         ? errors.passwordsError
         : name === "emptyField"

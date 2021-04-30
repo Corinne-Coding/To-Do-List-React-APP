@@ -70,7 +70,7 @@
   word-break: break-word;
 }
 .top-part {
-  align-items: flex-start;
+  align-items: baseline;
 }
 .top-part .input-container {
   width: 60%;

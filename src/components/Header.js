@@ -16,7 +16,9 @@ const Header = ({ handleTokenAndName, displayDisconnectButton, userName }) => {
   return (
     <div className="header">
       <div className="container">
-        <RedirectButton styled="icon" icon={list} page="/" />
+        <div>
+          <RedirectButton styled="icon" icon={list} page="/" />
+        </div>
 
         {/* Date & disconnection button */}
         <div className="line-center hidden-768">

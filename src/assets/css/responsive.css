@@ -30,9 +30,6 @@
   br {
     display: flex;
   }
-  h1 {
-    font-size: 1rem;
-  }
   .container {
     padding: 0 1rem;
   }
@@ -42,9 +39,6 @@
 @media (max-width: 320px) {
   html {
     font-size: 12px;
-  }
-  h1 {
-    font-size: 1rem;
   }
 }
 
@@ -61,18 +55,8 @@
 
 /* 576px */
 @media (max-width: 576px) {
-  .header .icon {
-    height: 2.2rem;
-  }
-  .date {
-    font-size: 0.6rem;
-  }
-}
-
-/* 320px */
-@media (max-width: 320px) {
-  .header .icon {
-    height: 2.2rem;
+  .header .container > div:first-child {
+    display: none;
   }
 }
 
@@ -89,6 +73,8 @@
     font-size: 0.7rem;
   }
 }
+
+/* ---------------------- CONTAINERS ---------------------- */
 
 /* ---------------------- */
 /* HomePage */
@@ -167,6 +153,43 @@
 }
 
 /* ---------------------- */
+/* BoardPage */
+/* ---------------------- */
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .main-board-page > h2 {
+    margin: 0 13rem;
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .main-board-page > h2 {
+    margin: 0 10rem;
+  }
+  .top-part .input-container {
+    width: 70%;
+    margin-right: 1rem;
+  }
+  .main-board-page section {
+    width: 80%;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .main-board-page > h2 {
+    margin: 0 7rem;
+  }
+  .main-board-page section {
+    width: 90%;
+  }
+}
+
+/* ---------------------- COMPONENTS ---------------------- */
+
+/* ---------------------- */
 /* AddButton - COMPONENT */
 /* ---------------------- */
 
@@ -174,7 +197,6 @@
 @media (max-width: 1024px) {
   .add-btn {
     padding: 0.8rem 0.8rem;
-    width: 7rem;
   }
 }
 
@@ -182,57 +204,7 @@
 @media (max-width: 768px) {
   .add-btn {
     padding: 0.6rem 0.6rem;
-    width: 6rem;
-  }
-}
-
-/* ---------------------- */
-/* ConnectionButton - COMPONENT */
-/* ---------------------- */
-
-/* 1024px */
-@media (max-width: 1024px) {
-  .connection-button {
-    font-size: 1.2rem;
-  }
-}
-
-/* 768px */
-@media (max-width: 768px) {
-  .connection-button {
-    font-size: 1rem;
-  }
-}
-
-/* 576px */
-@media (max-width: 576px) {
-  .connection-button {
-    font-size: 0.8rem;
-  }
-}
-
-/* ---------------------- */
-/* DisconnectionButton - COMPONENT */
-/* ---------------------- */
-
-/* 1024px */
-@media (max-width: 1024px) {
-  .disconnect-btn {
-    font-size: 1rem;
-  }
-}
-
-/* 768px */
-@media (max-width: 768px) {
-  .disconnect-btn {
-    font-size: 0.8rem;
-  }
-}
-
-/* 576px */
-@media (max-width: 576px) {
-  .disconnect-btn {
-    font-size: 0.6rem;
+    margin-top: 1rem;
   }
 }
 
@@ -267,38 +239,46 @@
 }
 
 /* ---------------------- */
-/* BoardPage */
+/* ConnectionButton - COMPONENT */
 /* ---------------------- */
-
-/* 1200px */
-@media (max-width: 1200px) {
-  .main-board-page > h2 {
-    margin: 0 13rem;
-  }
-}
 
 /* 1024px */
 @media (max-width: 1024px) {
-  .main-board-page > h2 {
-    margin: 0 10rem;
+  .connection-button {
+    font-size: 1.2rem;
   }
-  .top-part .input-container {
-    width: 70%;
-    margin-right: 1rem;
-  }
-  .main-board-page section {
-    width: 80%;
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .connection-button {
+    font-size: 1rem;
   }
 }
 
 /* 576px */
 @media (max-width: 576px) {
-  .main-board-page > h2 {
-    margin: 0 7rem;
+  .connection-button {
+    font-size: 0.8rem;
   }
-  .main-board-page section {
-    width: 90%;
+}
+
+/* ---------------------- */
+/* DisconnectionButton - COMPONENT */
+/* ---------------------- */
+
+/* 576px */
+@media (max-width: 576px) {
+  .disconnect-btn {
+    font-size: 0.8rem;
   }
+}
+
+/* ---------------------- */
+/* ErrorMessage - COMPONENT */
+/* ---------------------- */
+.error-message {
+  height: 2rem;
 }
 
 /* ---------------------- */

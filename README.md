@@ -1,3 +1,5 @@
+<p>⚠️ Please notice that this README file is more readable in light mode.</p>
+
 <h1 align="center">To-do List Project</h1>
 
 <p align="center">

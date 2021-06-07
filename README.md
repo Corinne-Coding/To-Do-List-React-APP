@@ -3,7 +3,7 @@
 <h1 align="center">To-do List Project</h1>
 
 <p align="center">
-<img width="800" alt="To-do List Project" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project.gif" />
+<img width="800" alt="To-do List Project" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list.gif" />
 </p>
 
 A to-do list web application built with **React**.
@@ -38,7 +38,7 @@ If you want to take a look on the backend project (Node.js server), follow this 
 
 ### Home page
 
-The user can choose to go to sign in page or to sign up page :
+Choose between going to "sign in" page or to "sign up" page :
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
@@ -48,7 +48,10 @@ The user can choose to go to sign in page or to sign up page :
 
 ### SignIn page
 
-Before to be logged in, all fields must be filled and credentials must be correct :
+Before to be logged in :
+
+- all fields must be filled
+- credentials must be correct
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-03.png" alt="screenshot-03" />
@@ -58,20 +61,24 @@ Before to be logged in, all fields must be filled and credentials must be correc
 
 ### SignUp page
 
-Before to complete sign up, all fields must be filled, email must be unique in DB, and passwords must be the same :
+Before to complete sign up :
+
+- all fields must be filled
+- email must be unique in DB
+- passwords must be the same
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-02.png" alt="screenshot-02" />
 </p>
 
-When a new account is created, I receive a SMS with the username and the email used for registration.
+🤳 When a new account is created, <strong>I receive a SMS</strong> on my personal phone number containing the username and the email used for registration.
 
 <br />
 
 ### Boards page
 
-On this page, the user can modify a board's title or delete a board.  
-If a board is selected, the user goes to single board page.
+Modify a board's title or delete a board.  
+Select a board to go to single board page (tasks list).
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-04.png" alt="screenshot-04" />
@@ -79,7 +86,7 @@ If a board is selected, the user goes to single board page.
 
 <br />
 
-The user can also add a new board. A modal opens to write a board title :
+Add a new board. A modal opens to write a board title :
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-05.png" alt="screenshot-05" />
@@ -89,7 +96,7 @@ The user can also add a new board. A modal opens to write a board title :
 
 ### Tasks page
 
-On this page, the user can add a task, modify a task title, choose a task status ("done" or "to do"), and delete a task :
+Add a task, modify a task title, choose a task status ("done" or "to do"), and delete a task :
 
 <p align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-06.png" alt="screenshot-06" />

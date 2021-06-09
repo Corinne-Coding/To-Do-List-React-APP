@@ -1,4 +1,4 @@
-<p align="center" >⚠️ <em>Please notice that this README file is <strong>more readable in light mode<strong>.</em></p>
+<p align="center" >⚠️ <em>Please notice that this README file is <strong>more readable in light mode</strong>.</em></p>
 
 <br />
 

@@ -1,8 +1,8 @@
-<p>⚠️ Please notice that this README file is more readable in light mode.</p>
+<p text-align="center" font-size="10px" color="grey">⚠️ Please notice that this README file is more readable in light mode.</p>
 
-<h1 align="center">To-do List Project</h1>
+<h1 text-align="center">To-do List Project</h1>
 
-<p align="center">
+<p text-align="center">
 <img width="800" alt="To-do List Project" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list.gif" />
 </p>
 
@@ -40,7 +40,7 @@ If you want to take a look on the backend project (Node.js server), follow this 
 
 Choose between going to "sign in" page or to "sign up" page :
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
 </p>
 
@@ -53,7 +53,7 @@ Before to be logged in :
 - all fields must be filled
 - credentials must be correct
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-03.png" alt="screenshot-03" />
 </p>
 
@@ -67,7 +67,7 @@ Before to complete sign up :
 - email must be unique in DB
 - passwords must be the same
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-02.png" alt="screenshot-02" />
 </p>
 
@@ -80,7 +80,7 @@ Before to complete sign up :
 Modify a board's title or delete a board.  
 Select a board to go to single board page (tasks list).
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-04.png" alt="screenshot-04" />
 </p>
 
@@ -88,7 +88,7 @@ Select a board to go to single board page (tasks list).
 
 Add a new board. A modal opens to write a board title :
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-05.png" alt="screenshot-05" />
 </p>
 
@@ -98,7 +98,7 @@ Add a new board. A modal opens to write a board title :
 
 Add a task, modify a task title, choose a task status ("done" or "to do"), and delete a task :
 
-<p align="center" >
+<p text-align="center" >
 <img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-06.png" alt="screenshot-06" />
 </p>
 

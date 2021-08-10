@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="line-center">
           <p>To-do List Project made with</p>
           <img src={ReactImg} alt="react icon" />
-          <p>by Corinne - 2020</p>
+          <p>by Corinne - 2021</p>
         </div>
 
         <div className="line-center">

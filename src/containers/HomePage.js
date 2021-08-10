@@ -22,7 +22,7 @@ const Home = () => {
           }}
           className={animated ? "animate__animated animate__pulse" : undefined}
         >
-          Welcome on the <br />
+          Welcome to the <br />
           To-do List <br />
           Project
         </p>

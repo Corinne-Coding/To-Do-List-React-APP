@@ -32,25 +32,10 @@ If you want to take a look on the **backend project** (Node.js server), follow t
 - [js-cookie](https://www.npmjs.com/package/js-cookie)
 - [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner)
 - [react-useanimations](https://www.npmjs.com/package/react-useanimations)
-- [animate.css](https://animate.style/)
 
 <br />
 
 ## Screenshots
-
-### Home page
-
-Choose between going to "sign in" page or to "sign up" page :
-
-<p align="center" >
-<img width="800" src="https://github.com/Corinne-Coding/To-Do-List-React-APP/blob/main/src/preview/to-do-list-project-screenshot-01.png" alt="screenshot-01" />
-</p>
-
-<br />
-
-<hr width="200px" align="center"  />
-
-<br />
 
 ### SignIn page
 

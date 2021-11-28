@@ -1,6 +1,5 @@
 :root {
   --rich-black: #020916;
-  --rich-blue-black: #041018;
   --rich-black-opacity: rgb(2, 9, 22, 0.8);
   --prussian-blue: #003554;
   --prussian-blue-opacity: rgb(0, 53, 84, 0.4);
@@ -133,17 +132,6 @@
   line-height: 1.2rem;
   list-style: disc;
   margin-left: 2rem;
-}
-
-/* ---------------------- */
-/* ConnectionButton - COMPONENT */
-/* ---------------------- */
-.connection-button {
-  font-size: 1.6rem;
-}
-.connection-button:hover {
-  background-color: var(--sapphire-blue);
-  transform: scale(1.1, 1.1);
 }
 
 /* ---------------------- */

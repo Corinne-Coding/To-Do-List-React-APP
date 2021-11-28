@@ -15,37 +15,6 @@
 }
 
 /* ---------------------- */
-/* HomePage */
-/* ---------------------- */
-.home-page .titles {
-  font-size: 4rem;
-}
-.home-page .titles > p {
-  text-shadow: 0.6rem 0.6rem 0.6rem var(--prussian-blue),
-    0 0 1em var(--sapphire-blue), 0 0 0.2em var(--sapphire-blue);
-}
-.home-page .titles > p:first-child {
-  padding: 2rem;
-  margin-bottom: 6rem;
-  text-align: center;
-  line-height: 4rem;
-}
-.home-page .titles > p:first-child:hover {
-  color: var(--capri);
-  cursor: none;
-}
-.home-page .titles > p:last-child {
-  margin-bottom: 4rem;
-  font-size: 2rem;
-  text-align: center;
-  line-height: 2.4rem;
-}
-.home-page .buttons-line {
-  width: 40%;
-  justify-content: space-between;
-}
-
-/* ---------------------- */
 /* BoardsPage */
 /* ---------------------- */
 .boards-card-container {

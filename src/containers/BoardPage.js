@@ -173,7 +173,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
       ) : (
         // data loaded
         <main className="container main-board-page">
-          <RedirectButton styled="bordered" page="/" />
+          <RedirectButton styled="bordered" page="/boards" />
 
           <h2>{history.location.state.boardTitle}</h2>
 

@@ -6,7 +6,7 @@
 /* ---------------------- */
 :root {
   --rich-black: #020916;
-  --rich-blue-black: #041018;
+  /* --rich-blue-black: #041018; */
   --rich-black-opacity: rgb(2, 9, 22, 0.8);
   --prussian-blue: #003554;
   --sapphire-blue: #006494;
@@ -35,7 +35,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--rich-blue-black);
+  background-color: var(--rich-black);
   color: var(--alice-blue);
   cursor: default;
 }
@@ -165,10 +165,10 @@ br {
 /* MAIN */
 /* ---------------------- */
 main {
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 13rem);
 }
 .main-home {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 8rem);
 }
 .main-boards-page {
   justify-content: flex-start;
@@ -179,19 +179,21 @@ main {
 /* FOOTER */
 /* ---------------------- */
 footer {
-  height: 5rem;
+  height: 8rem;
   background-color: var(--rich-black);
 }
+
 footer > div:first-child > div > p {
   color: var(--capri);
   font-size: 0.9rem;
+  line-height: 3rem;
 }
 footer > div:first-child > div > p:nth-child(3) {
   margin-right: 0.4rem;
+  line-height: 3rem;
 }
 footer > div:last-child {
   font-size: 0.7rem;
-  margin-top: 0.4rem;
   color: var(--grey);
   font-style: italic;
 }

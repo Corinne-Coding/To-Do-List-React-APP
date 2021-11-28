@@ -98,18 +98,12 @@
   .home-page .titles > p:first-child {
     padding: 0rem;
   }
-  .home-page .titles > p:last-child {
-    font-size: 1.8rem;
-  }
 }
 
 /* 768px */
 @media (max-width: 768px) {
   .home-page .titles {
     font-size: 2.4rem;
-  }
-  .home-page .titles > p:last-child {
-    font-size: 1.6rem;
   }
   .home-page .buttons-line {
     width: 50%;

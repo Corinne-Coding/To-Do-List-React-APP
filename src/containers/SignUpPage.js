@@ -46,7 +46,7 @@ const SignUpPage = ({ handleTokenAndName }) => {
               setIsLoading(false);
               handleTokenAndName(response.data.token, response.data.username);
               // redirect to boards page
-              history.push("/");
+              history.push("/boards");
             }, 1000);
           } else {
             setError("error");
@@ -119,7 +119,7 @@ const SignUpPage = ({ handleTokenAndName }) => {
 
           <RedirectButton
             text="Already have an account ? Sign in"
-            page="/signin"
+            page="/"
             styled="line"
           />
         </form>

@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 // Containers
 import BoardPage from "./containers/BoardPage";
 import BoardsPage from "./containers/BoardsPage";
-import HomePage from "./containers/HomePage";
 import SignInPage from "./containers/SignInPage";
 import SignUpPage from "./containers/SignUpPage";
 
@@ -55,10 +54,6 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/signin">
-          <SignInPage handleTokenAndName={handleTokenAndName} />
-        </Route>
-
         <Route path="/signup">
           <SignUpPage handleTokenAndName={handleTokenAndName} />
         </Route>
@@ -71,20 +66,24 @@ const App = () => {
               userToken={userToken}
             />
           ) : (
-            <HomePage />
+            <SignInPage handleTokenAndName={handleTokenAndName} />
           )}
         </Route>
 
-        <Route path="/">
-          {userToken && !isLoading ? (
+        <Route path="/boards">
+          {userToken ? (
             <BoardsPage
               handleTokenAndName={handleTokenAndName}
               userName={userName}
               userToken={userToken}
             />
           ) : (
-            <HomePage />
+            <SignInPage handleTokenAndName={handleTokenAndName} />
           )}
+        </Route>
+
+        <Route path="/">
+          <SignInPage handleTokenAndName={handleTokenAndName} />
         </Route>
       </Switch>
 

@@ -119,7 +119,7 @@ const SignUpPage = ({ handleTokenAndName }) => {
 
           <RedirectButton
             text="Already have an account ? Sign in"
-            page="/"
+            page="/signin"
             styled="line"
           />
         </form>

@@ -15,7 +15,6 @@ const App = () => {
   // states
   const [userToken, setUserToken] = useState(null);
   const [userName, setUserName] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchTokenAndName();
@@ -32,7 +31,6 @@ const App = () => {
       setUserToken(null);
       setUserName(null);
     }
-    setIsLoading(false);
   };
 
   // function to save or remove token from cookies
@@ -58,6 +56,10 @@ const App = () => {
           <SignUpPage handleTokenAndName={handleTokenAndName} />
         </Route>
 
+        <Route path="/signin">
+          <SignInPage handleTokenAndName={handleTokenAndName} />
+        </Route>
+
         <Route path="/board/:id">
           {userToken ? (
             <BoardPage
@@ -70,7 +72,7 @@ const App = () => {
           )}
         </Route>
 
-        <Route path="/boards">
+        <Route path="/">
           {userToken ? (
             <BoardsPage
               handleTokenAndName={handleTokenAndName}
@@ -80,10 +82,6 @@ const App = () => {
           ) : (
             <SignInPage handleTokenAndName={handleTokenAndName} />
           )}
-        </Route>
-
-        <Route path="/">
-          <SignInPage handleTokenAndName={handleTokenAndName} />
         </Route>
       </Switch>
 

@@ -10,6 +10,7 @@ const FormInput = ({ placeholder, type, value, setFunction }) => {
       maxLength={50}
       className="form-input"
       value={value}
+      autoFocus
       onChange={(event) => {
         handleInputChange(event.target.value);
       }}

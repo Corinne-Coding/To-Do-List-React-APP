@@ -60,6 +60,7 @@ const TaskCard = ({
               type="text"
               value={text}
               className="enabled"
+              autoFocus
               onChange={handleInputChange}
             />
             <Icon

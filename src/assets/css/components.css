@@ -319,7 +319,7 @@
   color: var(--rich-blue-black);
 }
 .task-card .input-container .disabled {
-  background-color: var(--rich-blue-black);
+  background-color: var(--rich-black);
   color: var(--alice-blue);
 }
 .task-card .input-container img {

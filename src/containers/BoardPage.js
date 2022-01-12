@@ -157,6 +157,21 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
     fetchData();
   }, [isLoadingTask, boardId, userToken, history]);
 
+  useEffect(() => {
+    // Listen for Enter pressed
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log(event.code);
+        handleAddTask();
+      }
+    };
+
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [handleAddTask]);
+
   return (
     <>
       <Header
@@ -185,6 +200,7 @@ const BoardPage = ({ handleTokenAndName, userToken, userName }) => {
                 placeholder="Add a task"
                 value={newTask}
                 maxLength={80}
+                autoFocus
                 onChange={(event) => {
                   setNewTask(event.target.value);
                 }}
